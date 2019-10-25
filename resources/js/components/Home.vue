@@ -1,3 +1,3 @@
 <template>
-    <p>halooooo</p>
+    <p>halo :2</p>
 </template>

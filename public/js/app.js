@@ -2973,7 +2973,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+<<<<<<< HEAD
   return _c("p", [_vm._v("halooooo")])
+=======
+  return _c("div")
+>>>>>>> 780dcd043589cede2de51e2a15c7b5e2afdc591b
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -56518,8 +56522,13 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! E:\Kuliah\Sem 7\PPTA\Dari Loly\fredofios\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! E:\Kuliah\Sem 7\PPTA\Dari Loly\fredofios\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! E:\Kuliah\Sem 7\PPTA\Fredofios\fredofios\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\Kuliah\Sem 7\PPTA\Fredofios\fredofios\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> 780dcd043589cede2de51e2a15c7b5e2afdc591b
 
 
 /***/ })
