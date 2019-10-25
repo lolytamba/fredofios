@@ -1829,115 +1829,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Home.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      valid: true,
-      name: '',
-      nameRules: [function (v) {
-        return !!v || 'Name is required';
-      }, function (v) {
-        return v && v.length <= 10 || 'Name must be less than 10 characters';
-      }],
-      email: '',
-      emailRules: [function (v) {
-        return !!v || 'E-mail is required';
-      }, function (v) {
-        return /.+@.+\..+/.test(v) || 'E-mail must be valid';
-      }],
-      select: null,
-      items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
-      checkbox: false
-    };
-  },
-  methods: {
-    validate: function validate() {
-      if (this.$refs.form.validate()) {
-        this.snackbar = true;
-      }
-    },
-    reset: function reset() {
-      this.$refs.form.reset();
-    },
-    resetValidation: function resetValidation() {
-      this.$refs.form.resetValidation();
-    }
-  }
-});
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/vuetify/dist/vuetify.min.css":
 /*!***********************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vuetify/dist/vuetify.min.css ***!
@@ -3082,114 +2973,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "v-form",
-    {
-      ref: "form",
-      attrs: { "lazy-validation": "" },
-      model: {
-        value: _vm.valid,
-        callback: function($$v) {
-          _vm.valid = $$v
-        },
-        expression: "valid"
-      }
-    },
-    [
-      _c("v-text-field", {
-        attrs: {
-          counter: 10,
-          rules: _vm.nameRules,
-          label: "Name",
-          required: ""
-        },
-        model: {
-          value: _vm.name,
-          callback: function($$v) {
-            _vm.name = $$v
-          },
-          expression: "name"
-        }
-      }),
-      _vm._v(" "),
-      _c("v-text-field", {
-        attrs: { rules: _vm.emailRules, label: "E-mail", required: "" },
-        model: {
-          value: _vm.email,
-          callback: function($$v) {
-            _vm.email = $$v
-          },
-          expression: "email"
-        }
-      }),
-      _vm._v(" "),
-      _c("v-select", {
-        attrs: {
-          items: _vm.items,
-          rules: [
-            function(v) {
-              return !!v || "Item is required"
-            }
-          ],
-          label: "Item",
-          required: ""
-        },
-        model: {
-          value: _vm.select,
-          callback: function($$v) {
-            _vm.select = $$v
-          },
-          expression: "select"
-        }
-      }),
-      _vm._v(" "),
-      _c("v-checkbox", {
-        attrs: {
-          rules: [
-            function(v) {
-              return !!v || "You must agree to continue!"
-            }
-          ],
-          label: "Do you agree?",
-          required: ""
-        },
-        model: {
-          value: _vm.checkbox,
-          callback: function($$v) {
-            _vm.checkbox = $$v
-          },
-          expression: "checkbox"
-        }
-      }),
-      _vm._v(" "),
-      _c(
-        "v-btn",
-        {
-          staticClass: "mr-4",
-          attrs: { disabled: !_vm.valid, color: "success" },
-          on: { click: _vm.validate }
-        },
-        [_vm._v("\n    Validate\n  ")]
-      ),
-      _vm._v(" "),
-      _c(
-        "v-btn",
-        {
-          staticClass: "mr-4",
-          attrs: { color: "error" },
-          on: { click: _vm.reset }
-        },
-        [_vm._v("\n    Reset Form\n  ")]
-      ),
-      _vm._v(" "),
-      _c(
-        "v-btn",
-        { attrs: { color: "warning" }, on: { click: _vm.resetValidation } },
-        [_vm._v("\n    Reset Validation\n  ")]
-      )
-    ],
-    1
-  )
+  return _c("div")
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -56651,17 +56435,15 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Home_vue_vue_type_template_id_f2b6376c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Home.vue?vue&type=template&id=f2b6376c& */ "./resources/js/components/Home.vue?vue&type=template&id=f2b6376c&");
-/* harmony import */ var _Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Home.vue?vue&type=script&lang=js& */ "./resources/js/components/Home.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-
-
+var script = {}
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
   _Home_vue_vue_type_template_id_f2b6376c___WEBPACK_IMPORTED_MODULE_0__["render"],
   _Home_vue_vue_type_template_id_f2b6376c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -56675,20 +56457,6 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/Home.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/Home.vue?vue&type=script&lang=js&":
-/*!*******************************************************************!*\
-  !*** ./resources/js/components/Home.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Home.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
