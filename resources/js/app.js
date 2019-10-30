@@ -14,7 +14,6 @@ import axios from 'axios';
 import Vuelidate from 'vuelidate';
 //import http from './service/Http'
 import { routes } from './routes'
-
 import 'vuetify/dist/vuetify.min.css';
 // import 'font-awesome/css/font-awesome.min.css';
 // import 'font-awesome/css/font-awesome.css';
