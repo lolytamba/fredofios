@@ -1,11 +1,11 @@
 <template>
-<v-app>
   <v-card flat>
     <v-card
       class="mx-auto"
       max-width="1200"
+      style="margin-top:-40px" 
     >
-      <v-divider></v-divider>
+     <v-divider></v-divider>
       <v-card-text style="height: 430px;.">
         <v-carousel
             cycle
@@ -34,7 +34,6 @@
       </v-card-text>
     </v-card>
   </v-card>
-  </v-app>
 </template>
 
 <script>
