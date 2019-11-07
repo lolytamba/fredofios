@@ -2,30 +2,33 @@
 <v-app>
   <v-img
     src="/aset/logo.png"
-    max-width="350"
-    max-height="350"
-    style="left:180px; top:80px"
+    height="150"
+    contain
+    style="right:300px; top:40px"
   ></v-img>
-  <v-img
-    src="/aset/moto2.png"
-    max-width="600"
-    max-height="600"
-    style="left:800px; top:-120px"
-  ></v-img>
+    <v-img
+      src="/aset/moto2.png"
+      contain
+      height="150"
+      style="left: 250px; top: -110px"
+    ></v-img>
   <v-card flat>
+  
     <v-card
-        class="mx-auto"
-        max-width="1200"
-        style="margin-top:-100px"  
+      class="mx-auto"
+      max-width="1200"
+      style="margin-top:-100px"  
     >
         <v-toolbar flat
           color="blue lighten-1" 
-          style="center">
+          style="center"
+          max-width="auto">
+          <v-row justify="space-around">
           <v-toolbar-items>
-            <v-btn text color="white" style="right: 0px;" @click="home">BERANDA</v-btn>
+            <v-btn text color="white" style="right:150px" @click="home">BERANDA</v-btn>
               <v-menu offset-y>
                 <template v-slot:activator="{ on }">
-                  <v-btn text color="white" style="right: -100px;"  v-on="on">TENTANG KAMI</v-btn>
+                  <v-btn text color="white" style="right:100px"  v-on="on">TENTANG KAMI</v-btn>
                 </template>
                 <v-list color="blue darken-1">
                 <v-list-item
@@ -37,10 +40,10 @@
                 </v-list-item>
               </v-list>
               </v-menu> 
-            <v-btn text color="white" style="right: -200px;"  @click="autisme">AUTISME</v-btn>
+            <v-btn text color="white" @click="autisme" style="right:40px">AUTISME</v-btn>
             <v-menu offset-y>
               <template v-slot:activator="{ on }">
-                <v-btn text color="white" style="right: -300px;" v-on="on">PROGRAM</v-btn>
+                <v-btn text color="white" v-on="on" style="right:-40px">PROGRAM</v-btn>
               </template>
                  <v-list color="blue darken-1">
                 <v-list-item
@@ -52,9 +55,10 @@
                 </v-list-item>
               </v-list>
             </v-menu>
-            <v-btn text color="white" style="right: -400px;" @click="galeri">GALERI</v-btn>
-            <v-btn text color="white"  style="right: -500px;" @click="kontak">KONTAK</v-btn>  
+            <v-btn text color="white" @click="galeri" style="right:-100px">GALERI</v-btn>
+            <v-btn text color="white"style="right:-150px" @click="kontak">KONTAK</v-btn>  
           </v-toolbar-items>
+          </v-row>
         </v-toolbar>
         <v-divider></v-divider>
       </v-card>
@@ -77,18 +81,32 @@
     >
       <v-card-text class="white--text text-center">
         <span style="font-size: 30px;">
-          <v-btn class="mx-2" fab dark small color="blue-grey darken-2">
-            <v-icon dark>mdi-instagram</v-icon>
+          <v-btn class="mx-2" fab dark small color="blue-grey darken-2" @click="yutub()">
+            <v-icon dark>mdi-youtube</v-icon>
           </v-btn>
-          <v-btn class="mx-2" fab dark small color="blue-grey darken-2">
+          <v-btn class="mx-2" fab dark small color="blue-grey darken-2" @click="wa()">
             <v-icon dark>mdi-whatsapp</v-icon>
           </v-btn>
-          <v-btn class="mx-2" fab dark small color="blue-grey darken-2">
-            <v-icon dark>mdi-facebook</v-icon>
+          <v-btn class="mx-2" fab dark small color="blue-grey darken-2" @click="fb()">
+            <v-icon dark>mdi-facebook</a></v-icon>
           </v-btn>
-          <v-btn class="mx-2" fab dark small color="blue-grey darken-2">
-            <v-icon dark>mdi-gmail</v-icon>
-          </v-btn>
+          <v-menu
+            v-model="menu"
+            :close-on-content-click="false"
+            :nudge-width="100"
+            top :offset-y="offset"
+          >
+          <template v-slot:activator="{ on }">
+            <v-btn class="mx-2" fab dark small color="blue-grey darken-2" v-on="on">
+              <v-icon dark>mdi-gmail</v-icon>
+            </v-btn>
+          </template>
+          <v-card align="center" justify="center" color="blue-grey darken-2">
+            <v-card-text class="white--text">
+              fredofios@gmail.com
+            </v-card-text>
+          </v-card>
+          </v-menu>
         </span>
       </v-card-text>
     
@@ -106,6 +124,8 @@
 export default {
   data () {
     return {
+      menu: false,
+      offset: true,
       items:[
         {title: 'Tentang Sekolah', route: '/spa/sekolah'},
         {title: 'Faslitas Sekolah', route: '/spa/fasilitas'},
@@ -134,6 +154,15 @@ export default {
       galeri(){
           this.$router.push({ name : 'galeri' })
       },
+      fb: function(){
+        window.open('https://id-id.facebook.com/fredofios');
+      },
+      wa: function(){
+        window.open('https://api.whatsapp.com/send?phone=+6281226911571');
+      },
+      yutub: function(){
+        window.open('https://www.youtube.com/channel/UCIQBMYvkv2kHfB-Aq4i59Lw');
+      }
   },
 }
 </script>

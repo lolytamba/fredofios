@@ -42,8 +42,8 @@
         { title: 'Gambar 2', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', desc:'ini keterangan', flex: 6 },
         { title: 'Gambar 3', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', desc:'ini keterangan', flex: 6 },
         { title: 'Gambar 4', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', desc:'ini keterangan', flex: 12 },
-        { title: 'Gambar 4', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', desc:'ini keterangan', flex: 6 },
-        { title: 'Gambar 5', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', desc:'ini keterangan', flex: 6 },
+        { title: 'Gambar 5', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', desc:'ini keterangan', flex: 6 },
+        { title: 'Gambar 6', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', desc:'ini keterangan', flex: 6 },
       ],
       }
     },

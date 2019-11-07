@@ -2597,12 +2597,12 @@ __webpack_require__.r(__webpack_exports__);
         desc: 'ini keterangan',
         flex: 12
       }, {
-        title: 'Gambar 4',
+        title: 'Gambar 5',
         src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
         desc: 'ini keterangan',
         flex: 6
       }, {
-        title: 'Gambar 5',
+        title: 'Gambar 6',
         src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
         desc: 'ini keterangan',
         flex: 6
@@ -2976,9 +2976,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      menu: false,
+      offset: true,
       items: [{
         title: 'Tentang Sekolah',
         route: '/spa/sekolah'
@@ -3030,6 +3050,15 @@ __webpack_require__.r(__webpack_exports__);
       this.$router.push({
         name: 'galeri'
       });
+    },
+    fb: function fb() {
+      window.open('https://id-id.facebook.com/fredofios');
+    },
+    wa: function wa() {
+      window.open('https://api.whatsapp.com/send?phone=+6281226911571');
+    },
+    yutub: function yutub() {
+      window.open('https://www.youtube.com/channel/UCIQBMYvkv2kHfB-Aq4i59Lw');
     }
   }
 });
@@ -5364,7 +5393,7 @@ var render = function() {
           _c(
             "v-row",
             {
-              staticStyle: { width: "1200px", height: "auto" },
+              staticStyle: { width: "auto", height: "auto" },
               attrs: { align: "star", justify: "center" }
             },
             [
@@ -5729,21 +5758,13 @@ var render = function() {
     "v-app",
     [
       _c("v-img", {
-        staticStyle: { left: "180px", top: "80px" },
-        attrs: {
-          src: "/aset/logo.png",
-          "max-width": "350",
-          "max-height": "350"
-        }
+        staticStyle: { right: "300px", top: "40px" },
+        attrs: { src: "/aset/logo.png", height: "150", contain: "" }
       }),
       _vm._v(" "),
       _c("v-img", {
-        staticStyle: { left: "800px", top: "-120px" },
-        attrs: {
-          src: "/aset/moto2.png",
-          "max-width": "600",
-          "max-height": "600"
-        }
+        staticStyle: { left: "250px", top: "-110px" },
+        attrs: { src: "/aset/moto2.png", contain: "", height: "150" }
       }),
       _vm._v(" "),
       _c(
@@ -5762,158 +5783,169 @@ var render = function() {
                 "v-toolbar",
                 {
                   staticStyle: {},
-                  attrs: { flat: "", color: "blue lighten-1" }
+                  attrs: {
+                    flat: "",
+                    color: "blue lighten-1",
+                    "max-width": "auto"
+                  }
                 },
                 [
                   _c(
-                    "v-toolbar-items",
+                    "v-row",
+                    { attrs: { justify: "space-around" } },
                     [
                       _c(
-                        "v-btn",
-                        {
-                          staticStyle: { right: "0px" },
-                          attrs: { text: "", color: "white" },
-                          on: { click: _vm.home }
-                        },
-                        [_vm._v("BERANDA")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-menu",
-                        {
-                          attrs: { "offset-y": "" },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "activator",
-                              fn: function(ref) {
-                                var on = ref.on
-                                return [
-                                  _c(
-                                    "v-btn",
-                                    _vm._g(
-                                      {
-                                        staticStyle: { right: "-100px" },
-                                        attrs: { text: "", color: "white" }
-                                      },
-                                      on
-                                    ),
-                                    [_vm._v("TENTANG KAMI")]
-                                  )
-                                ]
-                              }
-                            }
-                          ])
-                        },
+                        "v-toolbar-items",
                         [
+                          _c(
+                            "v-btn",
+                            {
+                              staticStyle: { right: "150px" },
+                              attrs: { text: "", color: "white" },
+                              on: { click: _vm.home }
+                            },
+                            [_vm._v("BERANDA")]
+                          ),
                           _vm._v(" "),
                           _c(
-                            "v-list",
-                            { attrs: { color: "blue darken-1" } },
-                            _vm._l(_vm.items, function(item) {
-                              return _c(
-                                "v-list-item",
+                            "v-menu",
+                            {
+                              attrs: { "offset-y": "" },
+                              scopedSlots: _vm._u([
                                 {
-                                  key: item.index,
-                                  attrs: { route: "", to: item.route }
-                                },
-                                [
-                                  _c(
-                                    "v-list-item-title",
-                                    { staticClass: "white--text" },
-                                    [_vm._v(_vm._s(item.title))]
+                                  key: "activator",
+                                  fn: function(ref) {
+                                    var on = ref.on
+                                    return [
+                                      _c(
+                                        "v-btn",
+                                        _vm._g(
+                                          {
+                                            staticStyle: { right: "100px" },
+                                            attrs: { text: "", color: "white" }
+                                          },
+                                          on
+                                        ),
+                                        [_vm._v("TENTANG KAMI")]
+                                      )
+                                    ]
+                                  }
+                                }
+                              ])
+                            },
+                            [
+                              _vm._v(" "),
+                              _c(
+                                "v-list",
+                                { attrs: { color: "blue darken-1" } },
+                                _vm._l(_vm.items, function(item) {
+                                  return _c(
+                                    "v-list-item",
+                                    {
+                                      key: item.index,
+                                      attrs: { route: "", to: item.route }
+                                    },
+                                    [
+                                      _c(
+                                        "v-list-item-title",
+                                        { staticClass: "white--text" },
+                                        [_vm._v(_vm._s(item.title))]
+                                      )
+                                    ],
+                                    1
                                   )
-                                ],
+                                }),
                                 1
                               )
-                            }),
+                            ],
                             1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              staticStyle: { right: "40px" },
+                              attrs: { text: "", color: "white" },
+                              on: { click: _vm.autisme }
+                            },
+                            [_vm._v("AUTISME")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-menu",
+                            {
+                              attrs: { "offset-y": "" },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "activator",
+                                  fn: function(ref) {
+                                    var on = ref.on
+                                    return [
+                                      _c(
+                                        "v-btn",
+                                        _vm._g(
+                                          {
+                                            staticStyle: { right: "-40px" },
+                                            attrs: { text: "", color: "white" }
+                                          },
+                                          on
+                                        ),
+                                        [_vm._v("PROGRAM")]
+                                      )
+                                    ]
+                                  }
+                                }
+                              ])
+                            },
+                            [
+                              _vm._v(" "),
+                              _c(
+                                "v-list",
+                                { attrs: { color: "blue darken-1" } },
+                                _vm._l(_vm.programs, function(program) {
+                                  return _c(
+                                    "v-list-item",
+                                    {
+                                      key: program.index,
+                                      attrs: { route: "", to: program.route }
+                                    },
+                                    [
+                                      _c(
+                                        "v-list-item-title",
+                                        { staticClass: "white--text" },
+                                        [_vm._v(_vm._s(program.title))]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                }),
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              staticStyle: { right: "-100px" },
+                              attrs: { text: "", color: "white" },
+                              on: { click: _vm.galeri }
+                            },
+                            [_vm._v("GALERI")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              staticStyle: { right: "-150px" },
+                              attrs: { text: "", color: "white" },
+                              on: { click: _vm.kontak }
+                            },
+                            [_vm._v("KONTAK")]
                           )
                         ],
                         1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          staticStyle: { right: "-200px" },
-                          attrs: { text: "", color: "white" },
-                          on: { click: _vm.autisme }
-                        },
-                        [_vm._v("AUTISME")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-menu",
-                        {
-                          attrs: { "offset-y": "" },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "activator",
-                              fn: function(ref) {
-                                var on = ref.on
-                                return [
-                                  _c(
-                                    "v-btn",
-                                    _vm._g(
-                                      {
-                                        staticStyle: { right: "-300px" },
-                                        attrs: { text: "", color: "white" }
-                                      },
-                                      on
-                                    ),
-                                    [_vm._v("PROGRAM")]
-                                  )
-                                ]
-                              }
-                            }
-                          ])
-                        },
-                        [
-                          _vm._v(" "),
-                          _c(
-                            "v-list",
-                            { attrs: { color: "blue darken-1" } },
-                            _vm._l(_vm.programs, function(program) {
-                              return _c(
-                                "v-list-item",
-                                {
-                                  key: program.index,
-                                  attrs: { route: "", to: program.route }
-                                },
-                                [
-                                  _c(
-                                    "v-list-item-title",
-                                    { staticClass: "white--text" },
-                                    [_vm._v(_vm._s(program.title))]
-                                  )
-                                ],
-                                1
-                              )
-                            }),
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          staticStyle: { right: "-400px" },
-                          attrs: { text: "", color: "white" },
-                          on: { click: _vm.galeri }
-                        },
-                        [_vm._v("GALERI")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          staticStyle: { right: "-500px" },
-                          attrs: { text: "", color: "white" },
-                          on: { click: _vm.kontak }
-                        },
-                        [_vm._v("KONTAK")]
                       )
                     ],
                     1
@@ -5957,11 +5989,16 @@ var render = function() {
                           dark: "",
                           small: "",
                           color: "blue-grey darken-2"
+                        },
+                        on: {
+                          click: function($event) {
+                            return _vm.yutub()
+                          }
                         }
                       },
                       [
                         _c("v-icon", { attrs: { dark: "" } }, [
-                          _vm._v("mdi-instagram")
+                          _vm._v("mdi-youtube")
                         ])
                       ],
                       1
@@ -5976,6 +6013,11 @@ var render = function() {
                           dark: "",
                           small: "",
                           color: "blue-grey darken-2"
+                        },
+                        on: {
+                          click: function($event) {
+                            return _vm.wa()
+                          }
                         }
                       },
                       [
@@ -5995,6 +6037,11 @@ var render = function() {
                           dark: "",
                           small: "",
                           color: "blue-grey darken-2"
+                        },
+                        on: {
+                          click: function($event) {
+                            return _vm.fb()
+                          }
                         }
                       },
                       [
@@ -6006,20 +6053,73 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c(
-                      "v-btn",
+                      "v-menu",
                       {
-                        staticClass: "mx-2",
                         attrs: {
-                          fab: "",
-                          dark: "",
-                          small: "",
-                          color: "blue-grey darken-2"
+                          "close-on-content-click": false,
+                          "nudge-width": 100,
+                          top: "",
+                          "offset-y": _vm.offset
+                        },
+                        scopedSlots: _vm._u([
+                          {
+                            key: "activator",
+                            fn: function(ref) {
+                              var on = ref.on
+                              return [
+                                _c(
+                                  "v-btn",
+                                  _vm._g(
+                                    {
+                                      staticClass: "mx-2",
+                                      attrs: {
+                                        fab: "",
+                                        dark: "",
+                                        small: "",
+                                        color: "blue-grey darken-2"
+                                      }
+                                    },
+                                    on
+                                  ),
+                                  [
+                                    _c("v-icon", { attrs: { dark: "" } }, [
+                                      _vm._v("mdi-gmail")
+                                    ])
+                                  ],
+                                  1
+                                )
+                              ]
+                            }
+                          }
+                        ]),
+                        model: {
+                          value: _vm.menu,
+                          callback: function($$v) {
+                            _vm.menu = $$v
+                          },
+                          expression: "menu"
                         }
                       },
                       [
-                        _c("v-icon", { attrs: { dark: "" } }, [
-                          _vm._v("mdi-gmail")
-                        ])
+                        _vm._v(" "),
+                        _c(
+                          "v-card",
+                          {
+                            attrs: {
+                              align: "center",
+                              justify: "center",
+                              color: "blue-grey darken-2"
+                            }
+                          },
+                          [
+                            _c("v-card-text", { staticClass: "white--text" }, [
+                              _vm._v(
+                                "\r\n              fredofios@gmail.com\r\n            "
+                              )
+                            ])
+                          ],
+                          1
+                        )
                       ],
                       1
                     )

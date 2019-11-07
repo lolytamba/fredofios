@@ -6,7 +6,7 @@
       style="margin-top:-40px" 
     >
      <v-divider></v-divider>
-      <v-card-text style="height: 430px;.">
+      <v-card-text style="height: 430px;">
         <v-carousel
           cycle
           height="400"
@@ -38,7 +38,7 @@
       <v-row  
         align="star"
         justify="center"
-        style="width:1200px; height:auto;">
+        style="width:auto; height:auto;">
         <v-col>
           <v-card 
             color="white"
