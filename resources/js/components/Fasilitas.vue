@@ -25,7 +25,6 @@
               <div>{{ card.text }}</div>
             </v-card-text>
 
-          </v-card-item>
           </v-card>
           </v-col>
           </v-row>
@@ -38,9 +37,14 @@
       return {
         cards: [
           {
-          title: 'Kolam Renang',
+            title: 'Ruang Kelas',
             src: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lafayette_High_School_%28Lexington%2C_KY%29_in_August_2019.jpg',
-          text: 'lorem ipsum'
+            text: 'lorem ipsum'
+          },
+          {
+            title: 'Hall',
+            src: 'https://www.expatica.com/uk/wp-content/uploads/sites/10/2019/01/School-Holidays-1920x1080.jpg',
+            text: 'lorem ipsum'
           },
           {
             title: 'Ruang Komputer',
@@ -48,17 +52,16 @@
             text: 'lorem ipsum'
           },
           {
-            title: 'Ruang Kelas',
+            title: 'Ruang UKS',
             src: 'https://www.warringtonguardian.co.uk/resources/images/10137723.jpg?display=1&htype=0&type=responsive-gallery',
             text: 'lorem ipsum'
           },
           {
-            title: 'Toilet',
+            title: 'Ruang Musik',
             src: 'https://www.expatica.com/uk/wp-content/uploads/sites/10/2019/01/School-Holidays-1920x1080.jpg',
             text: 'lorem ipsum'
-          }
+          },
         ]
-        
       }
     },
   }

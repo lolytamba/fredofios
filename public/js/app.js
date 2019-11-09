@@ -2109,6 +2109,90 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Akademik.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Akademik.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      cards: [{
+        title: 'Gambar 1',
+        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
+        desc: 'ini keterangan',
+        flex: 12
+      }, {
+        title: 'Gambar 2',
+        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+        desc: 'ini keterangan',
+        flex: 6
+      }, {
+        title: 'Gambar 3',
+        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
+        desc: 'ini keterangan',
+        flex: 6
+      }, {
+        title: 'Gambar 4',
+        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
+        desc: 'ini keterangan',
+        flex: 12
+      }, {
+        title: 'Gambar 5',
+        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+        desc: 'ini keterangan',
+        flex: 6
+      }, {
+        title: 'Gambar 6',
+        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
+        desc: 'ini keterangan',
+        flex: 6
+      }]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Autisme.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Autisme.vue?vue&type=script&lang=js& ***!
@@ -2502,24 +2586,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       cards: [{
-        title: 'Kolam Renang',
+        title: 'Ruang Kelas',
         src: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lafayette_High_School_%28Lexington%2C_KY%29_in_August_2019.jpg',
+        text: 'lorem ipsum'
+      }, {
+        title: 'Hall',
+        src: 'https://www.expatica.com/uk/wp-content/uploads/sites/10/2019/01/School-Holidays-1920x1080.jpg',
         text: 'lorem ipsum'
       }, {
         title: 'Ruang Komputer',
         src: 'https://www.thelocal.se/userdata/images/article/f399c757d392dd0d8bdfc817a9993176f527de128bb7d1928a85c9ce0c0aabd5.jpg',
         text: 'lorem ipsum'
       }, {
-        title: 'Ruang Kelas',
+        title: 'Ruang UKS',
         src: 'https://www.warringtonguardian.co.uk/resources/images/10137723.jpg?display=1&htype=0&type=responsive-gallery',
         text: 'lorem ipsum'
       }, {
-        title: 'Toilet',
+        title: 'Ruang Musik',
         src: 'https://www.expatica.com/uk/wp-content/uploads/sites/10/2019/01/School-Holidays-1920x1080.jpg',
         text: 'lorem ipsum'
       }]
@@ -2597,12 +2684,12 @@ __webpack_require__.r(__webpack_exports__);
         desc: 'ini keterangan',
         flex: 12
       }, {
-        title: 'Gambar 4',
+        title: 'Gambar 5',
         src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
         desc: 'ini keterangan',
         flex: 6
       }, {
-        title: 'Gambar 5',
+        title: 'Gambar 6',
         src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
         desc: 'ini keterangan',
         flex: 6
@@ -2863,6 +2950,109 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NonAkademik.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/NonAkademik.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      cards: [{
+        title: 'Batik',
+        src: '/aset/Batik.JPG',
+        desc: 'ini keterangan',
+        flex: 6
+      }, {
+        title: 'Kriya',
+        src: '/aset/Kriya.JPG',
+        desc: 'ini keterangan',
+        flex: 6
+      }, {
+        title: 'Masak',
+        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
+        desc: 'ini keterangan',
+        flex: 6
+      }, {
+        title: 'Melukis',
+        src: '/aset/Melukis.JPG',
+        desc: 'ini keterangan',
+        flex: 6
+      }, {
+        title: 'Musik',
+        src: '/aset/Musik.JPG',
+        desc: 'ini keterangan',
+        flex: 6
+      }, {
+        title: 'Olahraga',
+        src: '/aset/Olahraga.JPG',
+        desc: 'ini keterangan',
+        flex: 6
+      }, {
+        title: 'Pengenalan Masak',
+        src: '/aset/PengenalanMasak.JPG',
+        desc: 'ini keterangan',
+        flex: 6
+      }, {
+        title: 'Pramuka',
+        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
+        desc: 'ini keterangan',
+        flex: 6
+      }, {
+        title: 'Berenang',
+        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
+        desc: 'ini keterangan',
+        flex: 6
+      }, {
+        title: 'Tata Boga',
+        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
+        desc: 'ini keterangan',
+        flex: 6
+      }]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Spa.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Spa.vue?vue&type=script&lang=js& ***!
@@ -2976,9 +3166,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      menu: false,
+      offset: true,
       items: [{
         title: 'Tentang Sekolah',
         route: '/spa/sekolah'
@@ -2991,22 +3200,10 @@ __webpack_require__.r(__webpack_exports__);
       }],
       programs: [{
         title: 'Akademik',
-        route: '/spa/sekolah'
+        route: '/spa/akademik'
       }, {
-        title: 'Ketrampilan',
-        route: '/spa/sekolah'
-      }, {
-        title: 'Kesenian',
-        route: '/spa/sekolah'
-      }, {
-        title: 'Olah raga',
-        route: '/spa/sekolah'
-      }, {
-        title: 'Terapi',
-        route: '/spa/sekolah'
-      }, {
-        title: 'Sosialisasi',
-        route: '/spa/sekolah'
+        title: 'Non Akademik',
+        route: '/spa/non_akademik'
       }]
     };
   },
@@ -3030,6 +3227,15 @@ __webpack_require__.r(__webpack_exports__);
       this.$router.push({
         name: 'galeri'
       });
+    },
+    fb: function fb() {
+      window.open('https://id-id.facebook.com/fredofios');
+    },
+    wa: function wa() {
+      window.open('https://api.whatsapp.com/send?phone=+6281226911571');
+    },
+    yutub: function yutub() {
+      window.open('https://www.youtube.com/channel/UCIQBMYvkv2kHfB-Aq4i59Lw');
     }
   }
 });
@@ -4419,6 +4625,108 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Akademik.vue?vue&type=template&id=14896dfc&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Akademik.vue?vue&type=template&id=14896dfc& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-card",
+    { attrs: { flat: "" } },
+    [
+      _c(
+        "v-card",
+        {
+          staticClass: "mx-auto",
+          staticStyle: { "margin-top": "-40px" },
+          attrs: { "max-width": "1200" }
+        },
+        [
+          _c(
+            "v-card-text",
+            { staticStyle: { height: "auto" } },
+            [
+              _c(
+                "v-container",
+                { attrs: { fluid: "" } },
+                [
+                  _c(
+                    "v-row",
+                    { attrs: { dense: "" } },
+                    _vm._l(_vm.cards, function(card) {
+                      return _c(
+                        "v-col",
+                        { key: card.title, attrs: { cols: card.flex } },
+                        [
+                          _c(
+                            "v-card",
+                            [
+                              _c(
+                                "v-img",
+                                {
+                                  staticClass: "white--text align-end",
+                                  attrs: {
+                                    src: card.src,
+                                    gradient:
+                                      "to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)",
+                                    height: "400px"
+                                  }
+                                },
+                                [
+                                  _c("v-card-title", {
+                                    domProps: {
+                                      textContent: _vm._s(card.title)
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("v-card-text", {
+                                staticClass: "text--primary",
+                                domProps: { textContent: _vm._s(card.desc) }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    }),
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-container")
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/App.vue?vue&type=template&id=332fccf4&":
 /*!******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/App.vue?vue&type=template&id=332fccf4& ***!
@@ -5364,7 +5672,7 @@ var render = function() {
           _c(
             "v-row",
             {
-              staticStyle: { width: "1200px", height: "auto" },
+              staticStyle: { width: "auto", height: "auto" },
               attrs: { align: "star", justify: "center" }
             },
             [
@@ -5710,6 +6018,96 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NonAkademik.vue?vue&type=template&id=509d3c2e&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/NonAkademik.vue?vue&type=template&id=509d3c2e& ***!
+  \**************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-card",
+    { attrs: { flat: "" } },
+    [
+      _c(
+        "v-card",
+        {
+          staticClass: "mx-auto",
+          staticStyle: { "margin-top": "-40px" },
+          attrs: { "max-width": "1200" }
+        },
+        [
+          _c(
+            "v-card-text",
+            { staticStyle: { height: "auto" } },
+            [
+              _c(
+                "v-container",
+                { attrs: { fluid: "" } },
+                [
+                  _c(
+                    "v-row",
+                    { attrs: { dense: "" } },
+                    _vm._l(_vm.cards, function(card) {
+                      return _c(
+                        "v-col",
+                        { key: card.title, attrs: { cols: card.flex } },
+                        [
+                          _c(
+                            "v-card",
+                            [
+                              _c("v-img", {
+                                staticClass: "black--text align-end",
+                                attrs: { src: card.src, height: "300px" }
+                              }),
+                              _vm._v(" "),
+                              _c("v-card-title", {
+                                domProps: { textContent: _vm._s(card.title) }
+                              }),
+                              _vm._v(" "),
+                              _c("v-card-text", {
+                                staticClass: "text--primary",
+                                domProps: { textContent: _vm._s(card.desc) }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    }),
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-container")
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Spa.vue?vue&type=template&id=c47638ee&":
 /*!******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Spa.vue?vue&type=template&id=c47638ee& ***!
@@ -5762,158 +6160,169 @@ var render = function() {
                 "v-toolbar",
                 {
                   staticStyle: {},
-                  attrs: { flat: "", color: "blue lighten-1" }
+                  attrs: {
+                    flat: "",
+                    color: "blue lighten-1",
+                    "max-width": "auto"
+                  }
                 },
                 [
                   _c(
-                    "v-toolbar-items",
+                    "v-row",
+                    { attrs: { justify: "space-around" } },
                     [
                       _c(
-                        "v-btn",
-                        {
-                          staticStyle: { right: "0px" },
-                          attrs: { text: "", color: "white" },
-                          on: { click: _vm.home }
-                        },
-                        [_vm._v("BERANDA")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-menu",
-                        {
-                          attrs: { "offset-y": "" },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "activator",
-                              fn: function(ref) {
-                                var on = ref.on
-                                return [
-                                  _c(
-                                    "v-btn",
-                                    _vm._g(
-                                      {
-                                        staticStyle: { right: "-100px" },
-                                        attrs: { text: "", color: "white" }
-                                      },
-                                      on
-                                    ),
-                                    [_vm._v("TENTANG KAMI")]
-                                  )
-                                ]
-                              }
-                            }
-                          ])
-                        },
+                        "v-toolbar-items",
                         [
+                          _c(
+                            "v-btn",
+                            {
+                              staticStyle: { right: "150px" },
+                              attrs: { text: "", color: "white" },
+                              on: { click: _vm.home }
+                            },
+                            [_vm._v("BERANDA")]
+                          ),
                           _vm._v(" "),
                           _c(
-                            "v-list",
-                            { attrs: { color: "blue darken-1" } },
-                            _vm._l(_vm.items, function(item) {
-                              return _c(
-                                "v-list-item",
+                            "v-menu",
+                            {
+                              attrs: { "offset-y": "" },
+                              scopedSlots: _vm._u([
                                 {
-                                  key: item.index,
-                                  attrs: { route: "", to: item.route }
-                                },
-                                [
-                                  _c(
-                                    "v-list-item-title",
-                                    { staticClass: "white--text" },
-                                    [_vm._v(_vm._s(item.title))]
+                                  key: "activator",
+                                  fn: function(ref) {
+                                    var on = ref.on
+                                    return [
+                                      _c(
+                                        "v-btn",
+                                        _vm._g(
+                                          {
+                                            staticStyle: { right: "100px" },
+                                            attrs: { text: "", color: "white" }
+                                          },
+                                          on
+                                        ),
+                                        [_vm._v("TENTANG KAMI")]
+                                      )
+                                    ]
+                                  }
+                                }
+                              ])
+                            },
+                            [
+                              _vm._v(" "),
+                              _c(
+                                "v-list",
+                                { attrs: { color: "blue darken-1" } },
+                                _vm._l(_vm.items, function(item) {
+                                  return _c(
+                                    "v-list-item",
+                                    {
+                                      key: item.index,
+                                      attrs: { route: "", to: item.route }
+                                    },
+                                    [
+                                      _c(
+                                        "v-list-item-title",
+                                        { staticClass: "white--text" },
+                                        [_vm._v(_vm._s(item.title))]
+                                      )
+                                    ],
+                                    1
                                   )
-                                ],
+                                }),
                                 1
                               )
-                            }),
+                            ],
                             1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              staticStyle: { right: "50px" },
+                              attrs: { text: "", color: "white" },
+                              on: { click: _vm.autisme }
+                            },
+                            [_vm._v("AUTISME")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-menu",
+                            {
+                              attrs: { "offset-y": "" },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "activator",
+                                  fn: function(ref) {
+                                    var on = ref.on
+                                    return [
+                                      _c(
+                                        "v-btn",
+                                        _vm._g(
+                                          {
+                                            staticStyle: { right: "-50px" },
+                                            attrs: { text: "", color: "white" }
+                                          },
+                                          on
+                                        ),
+                                        [_vm._v("PROGRAM")]
+                                      )
+                                    ]
+                                  }
+                                }
+                              ])
+                            },
+                            [
+                              _vm._v(" "),
+                              _c(
+                                "v-list",
+                                { attrs: { color: "blue darken-1" } },
+                                _vm._l(_vm.programs, function(program) {
+                                  return _c(
+                                    "v-list-item",
+                                    {
+                                      key: program.index,
+                                      attrs: { route: "", to: program.route }
+                                    },
+                                    [
+                                      _c(
+                                        "v-list-item-title",
+                                        { staticClass: "white--text" },
+                                        [_vm._v(_vm._s(program.title))]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                }),
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              staticStyle: { right: "-100px" },
+                              attrs: { text: "", color: "white" },
+                              on: { click: _vm.galeri }
+                            },
+                            [_vm._v("GALERI")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              staticStyle: { right: "-150px" },
+                              attrs: { text: "", color: "white" },
+                              on: { click: _vm.kontak }
+                            },
+                            [_vm._v("KONTAK")]
                           )
                         ],
                         1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          staticStyle: { right: "-200px" },
-                          attrs: { text: "", color: "white" },
-                          on: { click: _vm.autisme }
-                        },
-                        [_vm._v("AUTISME")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-menu",
-                        {
-                          attrs: { "offset-y": "" },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "activator",
-                              fn: function(ref) {
-                                var on = ref.on
-                                return [
-                                  _c(
-                                    "v-btn",
-                                    _vm._g(
-                                      {
-                                        staticStyle: { right: "-300px" },
-                                        attrs: { text: "", color: "white" }
-                                      },
-                                      on
-                                    ),
-                                    [_vm._v("PROGRAM")]
-                                  )
-                                ]
-                              }
-                            }
-                          ])
-                        },
-                        [
-                          _vm._v(" "),
-                          _c(
-                            "v-list",
-                            { attrs: { color: "blue darken-1" } },
-                            _vm._l(_vm.programs, function(program) {
-                              return _c(
-                                "v-list-item",
-                                {
-                                  key: program.index,
-                                  attrs: { route: "", to: program.route }
-                                },
-                                [
-                                  _c(
-                                    "v-list-item-title",
-                                    { staticClass: "white--text" },
-                                    [_vm._v(_vm._s(program.title))]
-                                  )
-                                ],
-                                1
-                              )
-                            }),
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          staticStyle: { right: "-400px" },
-                          attrs: { text: "", color: "white" },
-                          on: { click: _vm.galeri }
-                        },
-                        [_vm._v("GALERI")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          staticStyle: { right: "-500px" },
-                          attrs: { text: "", color: "white" },
-                          on: { click: _vm.kontak }
-                        },
-                        [_vm._v("KONTAK")]
                       )
                     ],
                     1
@@ -5957,11 +6366,16 @@ var render = function() {
                           dark: "",
                           small: "",
                           color: "blue-grey darken-2"
+                        },
+                        on: {
+                          click: function($event) {
+                            return _vm.yutub()
+                          }
                         }
                       },
                       [
                         _c("v-icon", { attrs: { dark: "" } }, [
-                          _vm._v("mdi-instagram")
+                          _vm._v("mdi-youtube")
                         ])
                       ],
                       1
@@ -5976,6 +6390,11 @@ var render = function() {
                           dark: "",
                           small: "",
                           color: "blue-grey darken-2"
+                        },
+                        on: {
+                          click: function($event) {
+                            return _vm.wa()
+                          }
                         }
                       },
                       [
@@ -5995,6 +6414,11 @@ var render = function() {
                           dark: "",
                           small: "",
                           color: "blue-grey darken-2"
+                        },
+                        on: {
+                          click: function($event) {
+                            return _vm.fb()
+                          }
                         }
                       },
                       [
@@ -6006,20 +6430,73 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c(
-                      "v-btn",
+                      "v-menu",
                       {
-                        staticClass: "mx-2",
                         attrs: {
-                          fab: "",
-                          dark: "",
-                          small: "",
-                          color: "blue-grey darken-2"
+                          "close-on-content-click": false,
+                          "nudge-width": 100,
+                          top: "",
+                          "offset-y": _vm.offset
+                        },
+                        scopedSlots: _vm._u([
+                          {
+                            key: "activator",
+                            fn: function(ref) {
+                              var on = ref.on
+                              return [
+                                _c(
+                                  "v-btn",
+                                  _vm._g(
+                                    {
+                                      staticClass: "mx-2",
+                                      attrs: {
+                                        fab: "",
+                                        dark: "",
+                                        small: "",
+                                        color: "blue-grey darken-2"
+                                      }
+                                    },
+                                    on
+                                  ),
+                                  [
+                                    _c("v-icon", { attrs: { dark: "" } }, [
+                                      _vm._v("mdi-gmail")
+                                    ])
+                                  ],
+                                  1
+                                )
+                              ]
+                            }
+                          }
+                        ]),
+                        model: {
+                          value: _vm.menu,
+                          callback: function($$v) {
+                            _vm.menu = $$v
+                          },
+                          expression: "menu"
                         }
                       },
                       [
-                        _c("v-icon", { attrs: { dark: "" } }, [
-                          _vm._v("mdi-gmail")
-                        ])
+                        _vm._v(" "),
+                        _c(
+                          "v-card",
+                          {
+                            attrs: {
+                              align: "center",
+                              justify: "center",
+                              color: "blue-grey darken-2"
+                            }
+                          },
+                          [
+                            _c("v-card-text", { staticClass: "white--text" }, [
+                              _vm._v(
+                                "\r\n              fredofios@gmail.com\r\n            "
+                              )
+                            ])
+                          ],
+                          1
+                        )
                       ],
                       1
                     )
@@ -59995,6 +60472,75 @@ new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 
 /***/ }),
 
+/***/ "./resources/js/components/Akademik.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/components/Akademik.vue ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Akademik_vue_vue_type_template_id_14896dfc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Akademik.vue?vue&type=template&id=14896dfc& */ "./resources/js/components/Akademik.vue?vue&type=template&id=14896dfc&");
+/* harmony import */ var _Akademik_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Akademik.vue?vue&type=script&lang=js& */ "./resources/js/components/Akademik.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Akademik_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Akademik_vue_vue_type_template_id_14896dfc___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Akademik_vue_vue_type_template_id_14896dfc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Akademik.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Akademik.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/Akademik.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Akademik_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Akademik.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Akademik.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Akademik_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Akademik.vue?vue&type=template&id=14896dfc&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/Akademik.vue?vue&type=template&id=14896dfc& ***!
+  \*****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Akademik_vue_vue_type_template_id_14896dfc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Akademik.vue?vue&type=template&id=14896dfc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Akademik.vue?vue&type=template&id=14896dfc&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Akademik_vue_vue_type_template_id_14896dfc___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Akademik_vue_vue_type_template_id_14896dfc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/App.vue":
 /*!*****************************************!*\
   !*** ./resources/js/components/App.vue ***!
@@ -60669,6 +61215,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/NonAkademik.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/components/NonAkademik.vue ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _NonAkademik_vue_vue_type_template_id_509d3c2e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NonAkademik.vue?vue&type=template&id=509d3c2e& */ "./resources/js/components/NonAkademik.vue?vue&type=template&id=509d3c2e&");
+/* harmony import */ var _NonAkademik_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NonAkademik.vue?vue&type=script&lang=js& */ "./resources/js/components/NonAkademik.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _NonAkademik_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _NonAkademik_vue_vue_type_template_id_509d3c2e___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _NonAkademik_vue_vue_type_template_id_509d3c2e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/NonAkademik.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/NonAkademik.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/NonAkademik.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NonAkademik_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./NonAkademik.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NonAkademik.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NonAkademik_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/NonAkademik.vue?vue&type=template&id=509d3c2e&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/NonAkademik.vue?vue&type=template&id=509d3c2e& ***!
+  \********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NonAkademik_vue_vue_type_template_id_509d3c2e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./NonAkademik.vue?vue&type=template&id=509d3c2e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NonAkademik.vue?vue&type=template&id=509d3c2e&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NonAkademik_vue_vue_type_template_id_509d3c2e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NonAkademik_vue_vue_type_template_id_509d3c2e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Spa.vue":
 /*!*****************************************!*\
   !*** ./resources/js/components/Spa.vue ***!
@@ -60899,6 +61514,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Berita2__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/Berita2 */ "./resources/js/components/Berita2.vue");
 /* harmony import */ var _components_Berita3__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/Berita3 */ "./resources/js/components/Berita3.vue");
 /* harmony import */ var _components_Fasilitas__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/Fasilitas */ "./resources/js/components/Fasilitas.vue");
+/* harmony import */ var _components_Akademik__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/Akademik */ "./resources/js/components/Akademik.vue");
+/* harmony import */ var _components_NonAkademik__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/NonAkademik */ "./resources/js/components/NonAkademik.vue");
+
+
 
 
 
@@ -60960,6 +61579,14 @@ var routes = [{
     path: 'fasilitas',
     name: 'fasilitas',
     component: _components_Fasilitas__WEBPACK_IMPORTED_MODULE_12__["default"]
+  }, {
+    path: 'akademik',
+    name: 'akademik',
+    component: _components_Akademik__WEBPACK_IMPORTED_MODULE_13__["default"]
+  }, {
+    path: 'non_akademik',
+    name: 'non_akademik',
+    component: _components_NonAkademik__WEBPACK_IMPORTED_MODULE_14__["default"]
   }]
 }];
 
@@ -60983,8 +61610,8 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\Kuliah\Sem 7\PPTA\Dari Loly\fredofios\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\Kuliah\Sem 7\PPTA\Dari Loly\fredofios\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\_ cek\fredofios\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\_ cek\fredofios\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
