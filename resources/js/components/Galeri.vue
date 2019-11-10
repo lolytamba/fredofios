@@ -17,7 +17,6 @@
                 <v-img
                   :src="card.src"
                   class="white--text align-end"
-                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                   height="400px"
                 >
                   <v-card-title v-text="card.title"></v-card-title>
@@ -38,14 +37,21 @@
     data () {
       return {
         cards: [
-        { title: 'Gambar 1', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', desc:'ini keterangan', flex: 12 },
-        { title: 'Gambar 2', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', desc:'ini keterangan', flex: 6 },
-        { title: 'Gambar 3', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', desc:'ini keterangan', flex: 6 },
-        { title: 'Gambar 4', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', desc:'ini keterangan', flex: 12 },
-        { title: 'Gambar 5', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', desc:'ini keterangan', flex: 6 },
-        { title: 'Gambar 6', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', desc:'ini keterangan', flex: 6 },
+        { title: 'Kuas Melukis', src: '/aset/1.JPG', flex: 6 },
+        { title: 'Angklung', src: '/aset/2.JPG', flex: 6 },
+        { title: 'Batik', src: '/aset/3.JPG', flex: 6 },
+        { title: 'Melukis', src: '/aset/4.JPG', flex: 6 },
+        { title: 'Musik', src: '/aset/5.JPG', flex: 6 },
+        { title: 'Karya Lukis', src: '/aset/7.JPG', flex: 6 },
+        { title: 'Membuat Gelang', src: '/aset/6.JPG', flex: 6 },
+        { title: 'Makan Siang', src: '/aset/8.JPG', flex: 6 },
+        { title: 'Galeri Olahraga', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',  flex: 6 },
+        { title: 'Galeri Melukis', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
       ],
       }
     },
+    methods: {
+    
+    }
   }
 </script>

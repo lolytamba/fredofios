@@ -2158,9 +2158,9 @@ __webpack_require__.r(__webpack_exports__);
     return {
       cards: [{
         title: 'Gambar 1',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        desc: 'ini keterangan',
-        flex: 12
+        src: '/aset/Akademik_1.JPG',
+        desc: 'Pengenalan Mata Uang',
+        flex: 6
       }, {
         title: 'Gambar 2',
         src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
@@ -2172,18 +2172,8 @@ __webpack_require__.r(__webpack_exports__);
         desc: 'ini keterangan',
         flex: 6
       }, {
-        title: 'Gambar 4',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        desc: 'ini keterangan',
-        flex: 12
-      }, {
         title: 'Gambar 5',
         src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        desc: 'ini keterangan',
-        flex: 6
-      }, {
-        title: 'Gambar 6',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
         desc: 'ini keterangan',
         flex: 6
       }]
@@ -2659,43 +2649,53 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       cards: [{
-        title: 'Gambar 1',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        desc: 'ini keterangan',
-        flex: 12
+        title: 'Kuas Melukis',
+        src: '/aset/1.JPG',
+        flex: 6
       }, {
-        title: 'Gambar 2',
+        title: 'Angklung',
+        src: '/aset/2.JPG',
+        flex: 6
+      }, {
+        title: 'Batik',
+        src: '/aset/3.JPG',
+        flex: 6
+      }, {
+        title: 'Melukis',
+        src: '/aset/4.JPG',
+        flex: 6
+      }, {
+        title: 'Musik',
+        src: '/aset/5.JPG',
+        flex: 6
+      }, {
+        title: 'Karya Lukis',
+        src: '/aset/7.JPG',
+        flex: 6
+      }, {
+        title: 'Membuat Gelang',
+        src: '/aset/6.JPG',
+        flex: 6
+      }, {
+        title: 'Makan Siang',
+        src: '/aset/8.JPG',
+        flex: 6
+      }, {
+        title: 'Galeri Olahraga',
         src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        desc: 'ini keterangan',
         flex: 6
       }, {
-        title: 'Gambar 3',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        desc: 'ini keterangan',
-        flex: 6
-      }, {
-        title: 'Gambar 4',
-        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
-        desc: 'ini keterangan',
-        flex: 12
-      }, {
-        title: 'Gambar 5',
+        title: 'Galeri Melukis',
         src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
-        desc: 'ini keterangan',
-        flex: 6
-      }, {
-        title: 'Gambar 6',
-        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
-        desc: 'ini keterangan',
         flex: 6
       }]
     };
-  }
+  },
+  methods: {}
 });
 
 /***/ }),
@@ -2950,6 +2950,90 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Musik.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Musik.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      cards: [{
+        title: 'Gambar 1',
+        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
+        desc: 'ini keterangan',
+        flex: 12
+      }, {
+        title: 'Gambar 2',
+        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+        desc: 'ini keterangan',
+        flex: 6
+      }, {
+        title: 'Gambar 3',
+        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
+        desc: 'ini keterangan',
+        flex: 6
+      }, {
+        title: 'Gambar 4',
+        src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
+        desc: 'ini keterangan',
+        flex: 12
+      }, {
+        title: 'Gambar 5',
+        src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+        desc: 'ini keterangan',
+        flex: 6
+      }, {
+        title: 'Gambar 6',
+        src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg',
+        desc: 'ini keterangan',
+        flex: 6
+      }]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NonAkademik.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/NonAkademik.vue?vue&type=script&lang=js& ***!
@@ -3062,6 +3146,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -5531,12 +5616,7 @@ var render = function() {
                                 "v-img",
                                 {
                                   staticClass: "white--text align-end",
-                                  attrs: {
-                                    src: card.src,
-                                    gradient:
-                                      "to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)",
-                                    height: "400px"
-                                  }
+                                  attrs: { src: card.src, height: "400px" }
                                 },
                                 [
                                   _c("v-card-title", {
@@ -6018,6 +6098,108 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Musik.vue?vue&type=template&id=2beeef5c&":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Musik.vue?vue&type=template&id=2beeef5c& ***!
+  \********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-card",
+    { attrs: { flat: "" } },
+    [
+      _c(
+        "v-card",
+        {
+          staticClass: "mx-auto",
+          staticStyle: { "margin-top": "-40px" },
+          attrs: { "max-width": "1200" }
+        },
+        [
+          _c(
+            "v-card-text",
+            { staticStyle: { height: "auto" } },
+            [
+              _c(
+                "v-container",
+                { attrs: { fluid: "" } },
+                [
+                  _c(
+                    "v-row",
+                    { attrs: { dense: "" } },
+                    _vm._l(_vm.cards, function(card) {
+                      return _c(
+                        "v-col",
+                        { key: card.title, attrs: { cols: card.flex } },
+                        [
+                          _c(
+                            "v-card",
+                            [
+                              _c(
+                                "v-img",
+                                {
+                                  staticClass: "white--text align-end",
+                                  attrs: {
+                                    src: card.src,
+                                    gradient:
+                                      "to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)",
+                                    height: "400px"
+                                  }
+                                },
+                                [
+                                  _c("v-card-title", {
+                                    domProps: {
+                                      textContent: _vm._s(card.title)
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("v-card-text", {
+                                staticClass: "text--primary",
+                                domProps: { textContent: _vm._s(card.desc) }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    }),
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-container")
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NonAkademik.vue?vue&type=template&id=509d3c2e&":
 /*!**************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/NonAkademik.vue?vue&type=template&id=509d3c2e& ***!
@@ -6127,21 +6309,13 @@ var render = function() {
     "v-app",
     [
       _c("v-img", {
-        staticStyle: { left: "180px", top: "80px" },
-        attrs: {
-          src: "/aset/logo.png",
-          "max-width": "350",
-          "max-height": "350"
-        }
+        staticStyle: { right: "300px", top: "40px" },
+        attrs: { src: "/aset/logo.png", height: "150", contain: "" }
       }),
       _vm._v(" "),
       _c("v-img", {
-        staticStyle: { left: "800px", top: "-120px" },
-        attrs: {
-          src: "/aset/moto2.png",
-          "max-width": "600",
-          "max-height": "600"
-        }
+        staticStyle: { left: "250px", top: "-110px" },
+        attrs: { src: "/aset/moto2.png", contain: "", height: "150" }
       }),
       _vm._v(" "),
       _c(
@@ -6241,7 +6415,7 @@ var render = function() {
                           _c(
                             "v-btn",
                             {
-                              staticStyle: { right: "50px" },
+                              staticStyle: { right: "40px" },
                               attrs: { text: "", color: "white" },
                               on: { click: _vm.autisme }
                             },
@@ -6262,7 +6436,7 @@ var render = function() {
                                         "v-btn",
                                         _vm._g(
                                           {
-                                            staticStyle: { right: "-50px" },
+                                            staticStyle: { right: "-40px" },
                                             attrs: { text: "", color: "white" }
                                           },
                                           on
@@ -61215,6 +61389,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Musik.vue":
+/*!*******************************************!*\
+  !*** ./resources/js/components/Musik.vue ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Musik_vue_vue_type_template_id_2beeef5c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Musik.vue?vue&type=template&id=2beeef5c& */ "./resources/js/components/Musik.vue?vue&type=template&id=2beeef5c&");
+/* harmony import */ var _Musik_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Musik.vue?vue&type=script&lang=js& */ "./resources/js/components/Musik.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Musik_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Musik_vue_vue_type_template_id_2beeef5c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Musik_vue_vue_type_template_id_2beeef5c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Musik.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Musik.vue?vue&type=script&lang=js&":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/Musik.vue?vue&type=script&lang=js& ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Musik_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Musik.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Musik.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Musik_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Musik.vue?vue&type=template&id=2beeef5c&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/Musik.vue?vue&type=template&id=2beeef5c& ***!
+  \**************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Musik_vue_vue_type_template_id_2beeef5c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Musik.vue?vue&type=template&id=2beeef5c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Musik.vue?vue&type=template&id=2beeef5c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Musik_vue_vue_type_template_id_2beeef5c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Musik_vue_vue_type_template_id_2beeef5c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/NonAkademik.vue":
 /*!*************************************************!*\
   !*** ./resources/js/components/NonAkademik.vue ***!
@@ -61516,6 +61759,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Fasilitas__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/Fasilitas */ "./resources/js/components/Fasilitas.vue");
 /* harmony import */ var _components_Akademik__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/Akademik */ "./resources/js/components/Akademik.vue");
 /* harmony import */ var _components_NonAkademik__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/NonAkademik */ "./resources/js/components/NonAkademik.vue");
+/* harmony import */ var _components_Musik__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/Musik */ "./resources/js/components/Musik.vue");
+
 
 
 
@@ -61587,6 +61832,10 @@ var routes = [{
     path: 'non_akademik',
     name: 'non_akademik',
     component: _components_NonAkademik__WEBPACK_IMPORTED_MODULE_14__["default"]
+  }, {
+    path: 'musik',
+    name: 'musik',
+    component: _components_Musik__WEBPACK_IMPORTED_MODULE_15__["default"]
   }]
 }];
 

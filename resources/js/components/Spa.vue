@@ -2,17 +2,18 @@
 <v-app>
   <v-img
     src="/aset/logo.png"
-    max-width="350"
-    max-height="350"
-    style="left:180px; top:80px"
+    height="150"
+    contain
+    style="right:300px; top:40px"
   ></v-img>
-  <v-img
-    src="/aset/moto2.png"
-    max-width="600"
-    max-height="600"
-    style="left:800px; top:-120px"
-  ></v-img>
+    <v-img
+      src="/aset/moto2.png"
+      contain
+      height="150"
+      style="left: 250px; top: -110px"
+    ></v-img>
   <v-card flat>
+  
     <v-card
       class="mx-auto"
       max-width="1200"
@@ -39,10 +40,10 @@
                 </v-list-item>
               </v-list>
               </v-menu> 
-            <v-btn text color="white" @click="autisme" style="right:50px">AUTISME</v-btn>
+            <v-btn text color="white" @click="autisme" style="right:40px">AUTISME</v-btn>
             <v-menu offset-y>
               <template v-slot:activator="{ on }">
-                <v-btn text color="white" v-on="on" style="right:-50px">PROGRAM</v-btn>
+                <v-btn text color="white" v-on="on" style="right:-40px">PROGRAM</v-btn>
               </template>
                  <v-list color="blue darken-1">
                 <v-list-item
@@ -55,7 +56,7 @@
               </v-list>
             </v-menu>
             <v-btn text color="white" @click="galeri" style="right:-100px">GALERI</v-btn>
-            <v-btn text color="white"style="right:-150px" @click="kontak">KONTAK</v-btn>  
+            <v-btn text color="white" style="right:-150px" @click="kontak">KONTAK</v-btn>  
           </v-toolbar-items>
           </v-row>
         </v-toolbar>

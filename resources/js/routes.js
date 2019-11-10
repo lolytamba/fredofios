@@ -13,6 +13,7 @@ import Berita3 from './components/Berita3'
 import Fasilitas from './components/Fasilitas'
 import Akademik from './components/Akademik'
 import NonAkademik from './components/NonAkademik'
+import Musik from './components/Musik'
 
 export const routes = [
     {
@@ -84,6 +85,11 @@ export const routes = [
           path: 'non_akademik',
           name: 'non_akademik',
           component: NonAkademik,
+        },
+        {
+          path: 'musik',
+          name: 'musik',
+          component: Musik,
         },
       ]
     },
