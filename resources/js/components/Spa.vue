@@ -40,7 +40,7 @@
                 </v-list-item>
               </v-list>
               </v-menu> 
-            <v-btn text color="white" @click="autisme" style="right:40px">AUTISME</v-btn>
+            <v-btn text color="white" @click="artikel" style="right:40px">ARTIKEL</v-btn>
             <v-menu offset-y>
               <template v-slot:activator="{ on }">
                 <v-btn text color="white" v-on="on" style="right:-40px">PROGRAM</v-btn>
@@ -127,7 +127,6 @@ export default {
       menu: false,
       offset: true,
       items:[
-        {title: 'Tentang Sekolah', route: '/spa/sekolah'},
         {title: 'Faslitas Sekolah', route: '/spa/fasilitas'},
         {title: 'Staff Sekolah', route: '/spa/staff'}
       ],
@@ -148,8 +147,8 @@ export default {
       kontak(){
           this.$router.push({ name : 'kontak' })
       },
-      autisme(){
-          this.$router.push({ name : 'autisme' })
+      artikel(){
+          this.$router.push({ name : 'artikel' })
       },
       galeri(){
           this.$router.push({ name : 'galeri' })

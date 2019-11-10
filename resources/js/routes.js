@@ -3,8 +3,7 @@ import Home from './components/Home'
 import Spa from './components/Spa'
 import Base from './components/Base'
 import Kontak from './components/Kontak'
-import TentangSekolah from './components/TentangSekolah'
-import Autisme from './components/Autisme'
+import Artikel from './components/Artikel'
 import Galeri from './components/Galeri'
 import Staff from './components/Staff'
 import Berita from './components/Berita1'
@@ -34,14 +33,9 @@ export const routes = [
           component: Kontak,
         },
         {
-          path: 'sekolah',
-          name: 'sekolah',
-          component: TentangSekolah,
-        },
-        {
-          path: 'autisme',
-          name: 'autisme',
-          component: Autisme,
+          path: 'artikel',
+          name: 'artikel',
+          component: Artikel,
         },
         {
           path: 'galeri',
