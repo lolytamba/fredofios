@@ -35,89 +35,31 @@
     </v-card>
 
     <v-container>
-      <v-row  
-        align="star"
-        justify="center"
-        style="width:auto; height:auto;">
-        <v-col>
-          <v-card 
-            color="white"
-            style="width:350px; height:500px">
-           <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
-            >
-              <v-card-title>berita 1</v-card-title>
-            </v-img>
-            <v-card-text>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            </v-card-text>
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn small color="primary" @click="berita1">Lanjutkan membaca </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-        <v-spacer></v-spacer>
-         <v-col>
-          <v-card 
-            color="white"
-            style="width:350px; height:500px">
-           <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
-            >
-              <v-card-title>berita 2</v-card-title>
-            </v-img>
-            <v-card-text>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            </v-card-text>
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn small color="primary" @click="berita2">Lanjutkan membaca </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-        <v-spacer></v-spacer>
-         <v-col>
-          <v-card 
-            color="white"
-            style="width:350px; height:500px">
-           <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
-            >
-              <v-card-title>berita 3</v-card-title>
-            </v-img>
-            <v-card-text>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            </v-card-text>
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn small color="primary" @click="berita3">Lanjutkan membaca </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
+     <v-card-text class="black--text text-justify">
+       <v-flex class="display-2 font-weight-bold blue--text">
+         Tentang SLA Fredofios
+       </v-flex>
+       <br>
+
+       <v-flex class="title font-weight-regular">
+          Sekolah Lanjutan Autis (SLA) Fredofios berdiri pada tanggal 3 April 2003. SLA Fredofios  
+          merupakan salah satu sekolah luar
+          biasa yang berada di Yogyakarta untuk pelajar dengan Autism Spectrum Disorder (ASD).
+          <br><br>
+          Fredofios terletak di sebidang tanah seluas 400 m dan bangunan 370m beralamat di JL. Seturan II 
+          Perumnas Gg Indragiri B/II Condongsari Depok Sleman Yogyakarta, tepatnya berada diarah utara
+          selokan mataram. Sekolah khusus untuk remaja autis usia 10 - 23 tahun pada jenjang SMOLB dan SMALB.
+          Fredofios memiliki sekitar 18 pelajar dan xx anggota staff sekolah. Fredofios dibawah naungan Yayasan Autisma Nusantara.
+          <br><br>
+          Pembelajaran Anak dan Remaja Autis di Fredofios lebih
+          mengarah ke Life Skill, dengan porsi belajar Keterampilan dan Seni 80% yang disesuaikan dengan Minat dan Potensi dari masing-masing siswa.
+          Setiap anak digali potensinya dan dikembangkan sesuai potensi yang dimilikinya. Sehingga setiap anak akan berkembang sesuai mnat dan bakatnya masing-masing.</p>
+       </v-flex>
+
+        </v-card-text>
     </v-container>
+
+    
   </v-card>
 </template>
 
