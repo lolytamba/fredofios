@@ -13,12 +13,20 @@ import Fasilitas from './components/Fasilitas'
 import Akademik from './components/Akademik'
 import NonAkademik from './components/NonAkademik'
 import VisiMisi from './components/VisiMisi'
+import SpaAdmin from './components/SpaAdmin'
+import AddGaleri from './components/AddGaleri'
+import Login from './components/Login'
 
 export const routes = [
     {
       path: '/',
       name: 'base',
       component: Base,
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,
     },
     {
       path: '/spa',
@@ -51,17 +59,17 @@ export const routes = [
           component: Staff,
         },
         {
-          path: 'home/berita1',
+          path: 'artikel/berita1',
           name: 'berita1',
           component: Berita,
         },
         {
-          path: 'home/berita2',
+          path: 'artikel/berita2',
           name: 'berita2',
           component: Berita2,
         },
         {
-          path: 'home/berita3',
+          path: 'artikel/berita3',
           name: 'berita3',
           component: Berita3,
         },
@@ -87,4 +95,16 @@ export const routes = [
         },
       ]
     },
+    {
+      path: '/spaadmin',
+      name: 'spaadmin',
+      component: SpaAdmin,
+      children: [
+        {
+          path: '/AddGaleri',
+          name: 'AddGaleri',
+          component: AddGaleri,
+        },
+      ]
+    }
   ];

@@ -104,7 +104,6 @@ import { required, maxLength, minLength, numeric, email } from 'vuelidate/lib/va
 
     data () {
       return {
-        cek1:[],
         nama: '',
         email: '',
         nohp: '',
@@ -113,9 +112,7 @@ import { required, maxLength, minLength, numeric, email } from 'vuelidate/lib/va
         cek: false,
       };
     },
-    mounted(){
-      this.getItem()
-    },
+
     computed: {
       namaRules () {
         const errors = []
@@ -159,19 +156,16 @@ import { required, maxLength, minLength, numeric, email } from 'vuelidate/lib/va
             pesan : this.pesan,
           }
           await Controller.store(payload);
-          this.refresh()
+          this.reload()
           console.log(payload);
         }catch(err){
           console.log(err)
         }
       },
-      refresh(){
-        this.nama = '',
-        this.email = '',
-        this.nohp = '',
-        this.pesan = '',
-        this.cek = false 
-      }
+      
+      reload(){
+        window.location.reload()
+      },
     }
   }
 </script>

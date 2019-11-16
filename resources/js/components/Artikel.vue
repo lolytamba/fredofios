@@ -100,5 +100,17 @@
       return {
       }
     },
+
+    methods: {
+      berita1(){
+         this.$router.push({ name : 'berita1' })
+      },
+      berita2(){
+         this.$router.push({ name : 'berita2' })
+      },
+      berita3(){
+         this.$router.push({ name : 'berita3' })
+      }
+    },
   }
 </script>

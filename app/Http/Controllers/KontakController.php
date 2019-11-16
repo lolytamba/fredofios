@@ -41,7 +41,7 @@ class KontakController extends Controller
         Mail::send('email', $kontak,
         function($message) use ($kontak) {
             $message->from($kontak['email']);
-            $message->to('lolyeliatamba@gmail.com');
+            $message->to('jovanca55@gmail.com');
             $message->subject('Pesan/Pertanyaan untuk Fredofios');
         });
         

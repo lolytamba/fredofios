@@ -18,7 +18,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::get('/kontak','ContactMail@__construct');
-// Route::post('/kontak','ContactMail@build');
-
 Route::post('/kontakform','KontakController@store');
+Route::post('/register','UserController@create');
+//Route::post('/login','UserController@login');
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'auth'
+], function ($router) {
+    Route::post('/login','UserController@login'); //web platform
+});

@@ -55,8 +55,7 @@
           mengarah ke Life Skill, dengan porsi belajar Keterampilan dan Seni 80% yang disesuaikan dengan Minat dan Potensi dari masing-masing siswa.
           Setiap anak digali potensinya dan dikembangkan sesuai potensi yang dimilikinya. Sehingga setiap anak akan berkembang sesuai mnat dan bakatnya masing-masing.</p>
        </v-flex>
-
-        </v-card-text>
+      </v-card-text>
     </v-container>
 
     
@@ -88,15 +87,7 @@
       }
     },
     methods: {
-      berita1(){
-         this.$router.push({ name : 'berita1' })
-      },
-      berita2(){
-         this.$router.push({ name : 'berita2' })
-      },
-      berita3(){
-         this.$router.push({ name : 'berita3' })
-      }
+      
     },
   }
 </script>

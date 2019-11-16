@@ -20,15 +20,44 @@
         >
         <v-toolbar flat
           color="blue lighten-1" 
-          style="center">
-            <v-toolbar-items>
-                <v-btn text color="white" style="right: 0px;" @click="home">BERANDA</v-btn>
-                <v-btn text color="white" style="right: -100px;">TENTANG KAMI</v-btn>
-                <v-btn text color="white" style="right: -200px;">AUTISME</v-btn>
-                <v-btn text color="white" style="right: -300px;">PROGRAM</v-btn>
-                <v-btn text color="white" style="right: -400px;">GALERI</v-btn>
-                <v-btn text color="white"  style="right: -500px;">KONTAK</v-btn>  
-            </v-toolbar-items>
+          style="center"
+          max-width="auto">
+          <v-row justify="space-around">
+          <v-toolbar-items>
+            <v-btn text color="white" style="right:150px" @click="home">BERANDA</v-btn>
+              <v-menu offset-y>
+                <template v-slot:activator="{ on }">
+                  <v-btn text color="white" style="right:100px"  v-on="on">TENTANG KAMI</v-btn>
+                </template>
+                <v-list color="blue darken-1">
+                <v-list-item
+                  v-for="item in items"
+                  :key="item.index"
+                  route :to="item.route"
+                >
+                  <v-list-item-title class="white--text">{{ item.title }}</v-list-item-title>
+                </v-list-item>
+              </v-list>
+              </v-menu> 
+            <v-btn text color="white" @click="artikel" style="right:40px">ARTIKEL</v-btn>
+            <v-menu offset-y>
+              <template v-slot:activator="{ on }">
+                <v-btn text color="white" v-on="on" style="right:-40px">PROGRAM</v-btn>
+              </template>
+                 <v-list color="blue darken-1">
+                <v-list-item
+                  v-for="program in programs"
+                  :key="program.index"
+                  route :to="program.route"
+                >
+                  <v-list-item-title class="white--text">{{ program.title }}</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+            <v-btn text color="white" @click="galeri" style="right:-100px">GALERI</v-btn>
+            <v-btn text color="white" style="right:-150px" @click="kontak">KONTAK</v-btn>  
+          </v-toolbar-items>
+          </v-row>
         </v-toolbar>
         <v-divider></v-divider>
             <v-card-text style="height: 430px;">
@@ -61,93 +90,32 @@
     </v-card>
 
     <v-container>
-      <v-row  
-        align="star"
-        justify="center"
-        style="width:1200px; height:auto;">
-        <v-col>
-          <v-card 
-            color="white"
-            style="width:350px; height:500px">
-           <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
-            >
-              <v-card-title>berita 1</v-card-title>
-            </v-img>
-            <v-card-text>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            </v-card-text>
-            <v-card-actions>
-              <v-icon color="black">mdi-arrow-right-bold</v-icon>
-              <v-card-text>Continue reading</v-card-text>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-        <v-spacer></v-spacer>
-         <v-col>
-          <v-card 
-            color="white"
-            style="width:350px; height:500px">
-           <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
-            >
-              <v-card-title>berita 2</v-card-title>
-            </v-img>
-            <v-card-text>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            </v-card-text>
-            <v-card-actions>
-              <v-icon color="black">mdi-arrow-right-bold</v-icon>
-              <v-card-text>Continue reading</v-card-text>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-        <v-spacer></v-spacer>
-         <v-col>
-          <v-card 
-            color="white"
-            style="width:350px; height:500px">
-           <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
-            >
-              <v-card-title>berita 3</v-card-title>
-            </v-img>
-            <v-card-text>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            </v-card-text>
-            <v-card-actions>
-              <v-icon color="black">mdi-arrow-right-bold</v-icon>
-              <v-card-text>Continue reading</v-card-text>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
+     <v-card-text class="black--text text-justify">
+       <v-flex class="display-2 font-weight-bold blue--text">
+         Tentang SLA Fredofios
+       </v-flex>
+       <br>
+
+       <v-flex class="title font-weight-regular">
+          Sekolah Lanjutan Autis (SLA) Fredofios berdiri pada tanggal 3 April 2003. SLA Fredofios  
+          merupakan salah satu sekolah luar
+          biasa yang berada di Yogyakarta untuk pelajar dengan Autism Spectrum Disorder (ASD).
+          <br><br>
+          Fredofios terletak di sebidang tanah seluas 400 m dan bangunan 370m beralamat di JL. Seturan II 
+          Perumnas Gg Indragiri B/II Condongsari Depok Sleman Yogyakarta, tepatnya berada diarah utara
+          selokan mataram. Sekolah khusus untuk remaja autis usia 10 - 23 tahun pada jenjang SMOLB dan SMALB.
+          Fredofios memiliki sekitar 18 pelajar dan xx anggota staff sekolah. Fredofios dibawah naungan Yayasan Autisma Nusantara.
+          <br><br>
+          Pembelajaran Anak dan Remaja Autis di Fredofios lebih
+          mengarah ke Life Skill, dengan porsi belajar Keterampilan dan Seni 80% yang disesuaikan dengan Minat dan Potensi dari masing-masing siswa.
+          Setiap anak digali potensinya dan dikembangkan sesuai potensi yang dimilikinya. Sehingga setiap anak akan berkembang sesuai mnat dan bakatnya masing-masing.</p>
+       </v-flex>
+      </v-card-text>
     </v-container>
   </v-card>
 
   <!--footer--> 
-  <v-footer
+ <v-footer
     dark
     padless
   >
@@ -159,26 +127,41 @@
     >
       <v-card-text class="white--text text-center">
         <span style="font-size: 30px;">
-          <v-btn class="mx-2" fab dark small color="blue-grey darken-2">
-             <v-icon dark>mdi-instagram</v-icon>
+          <v-btn class="mx-2" fab dark small color="blue-grey darken-2" @click="yutub()">
+            <v-icon dark>mdi-youtube</v-icon>
           </v-btn>
-          <v-btn class="mx-2" fab dark small color="blue-grey darken-2">
-             <v-icon dark>mdi-whatsapp</v-icon>
+          <v-btn class="mx-2" fab dark small color="blue-grey darken-2" @click="wa()">
+            <v-icon dark>mdi-whatsapp</v-icon>
           </v-btn>
-          <v-btn class="mx-2" fab dark small color="blue-grey darken-2">
-             <v-icon dark>mdi-facebook</v-icon>
+          <v-btn class="mx-2" fab dark small color="blue-grey darken-2" @click="fb()">
+            <v-icon dark>mdi-facebook</a></v-icon>
           </v-btn>
-          <v-btn class="mx-2" fab dark small color="blue-grey darken-2">
-             <v-icon dark>mdi-gmail</v-icon>
-          </v-btn>
+          <v-menu
+            v-model="menu"
+            :close-on-content-click="false"
+            :nudge-width="100"
+            top :offset-y="offset"
+          >
+          <template v-slot:activator="{ on }">
+            <v-btn class="mx-2" fab dark small color="blue-grey darken-2" v-on="on">
+              <v-icon dark>mdi-gmail</v-icon>
+            </v-btn>
+          </template>
+          <v-card align="center" justify="center" color="blue-grey darken-2">
+            <v-card-text class="white--text">
+              fredofios@gmail.com
+            </v-card-text>
+          </v-card>
+          </v-menu>
         </span>
       </v-card-text>
-
+    
       <v-card-text class="blue-grey darken-2 white--text text-center">
         <strong class="title">SLA Fredofios Yogyakarta</strong>
         <p class="font-condensed-light">Jl. Perumnas No.C7, Dabag, Condongcatur, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta (Telp. 55283)</p>
       </v-card-text>
     </v-card>
+    
   </v-footer>
   </v-app>
 </template>
@@ -204,13 +187,42 @@ export default {
             title: 'Sosialisasi',
             src: 'https://www.expatica.com/uk/wp-content/uploads/sites/10/2019/01/School-Holidays-1920x1080.jpg'
           }
-        ]
+        ],
+        menu: false,
+        offset: true,
+        items:[
+          {title: 'Visi & Misi', route: '/spa/visi_misi'},
+          {title: 'Faslitas Sekolah', route: '/spa/fasilitas'},
+          {title: 'Staff Sekolah', route: '/spa/staff'}
+        ],
+        programs:[
+          {title: 'Akademik', route: '/spa/akademik'},
+          {title: 'Non Akademik', route: '/spa/non_akademik'},
+        ],
       }
     },
     methods: {
-        home(){
-            this.$router.push({ name : 'home' })
-        }
+      home(){
+          this.$router.push({ name : 'home' })
+      },
+      kontak(){
+          this.$router.push({ name : 'kontak' })
+      },
+      artikel(){
+          this.$router.push({ name : 'artikel' })
+      },
+      galeri(){
+          this.$router.push({ name : 'galeri' })
+      },
+      fb: function(){
+        window.open('https://id-id.facebook.com/fredofios');
+      },
+      wa: function(){
+        window.open('https://api.whatsapp.com/send?phone=6281226911571');
+      },
+      yutub: function(){
+        window.open('https://www.youtube.com/channel/UCIQBMYvkv2kHfB-Aq4i59Lw');
+      }
     },
 }
 </script>

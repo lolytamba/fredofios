@@ -115,7 +115,7 @@
         <p class="font-condensed-light">Jl. Perumnas No.C7, Dabag, Condongcatur, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta (Telp. 55283)</p>
       </v-card-text>
     </v-card>
-    
+
   </v-footer>
   </v-app>
 </template>
@@ -154,7 +154,7 @@ export default {
         window.open('https://id-id.facebook.com/fredofios');
       },
       wa: function(){
-        window.open('https://api.whatsapp.com/send?phone=+6281226911571');
+        window.open('https://api.whatsapp.com/send?phone=6281226911571');
       },
       yutub: function(){
         window.open('https://www.youtube.com/channel/UCIQBMYvkv2kHfB-Aq4i59Lw');
