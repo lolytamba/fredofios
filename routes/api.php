@@ -28,3 +28,11 @@ Route::group([
 ], function ($router) {
     Route::post('/login','UserController@login'); //web platform
 });
+
+
+//====================Api Galeri====================
+Route::post('/galeri','GaleriController@store');
+Route::get('/galeri','GaleriController@index');
+Route::get('/galeri/{id}','GaleriController@show');
+Route::patch('/galeri/{id}','GaleriController@update');
+Route::delete('/galeri/{id}','GaleriController@destroy');
