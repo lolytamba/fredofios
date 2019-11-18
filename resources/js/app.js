@@ -10,7 +10,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Vuetify from 'vuetify';
 // import auth from './service/Auth'
-// import store from './store'
+import store from './store'
 import Vuelidate from 'vuelidate';
 //import http from './service/Http'
 import { routes } from './routes'
@@ -41,7 +41,7 @@ new Vue({
     el: '#app',
     router,
     vuetify : new Vuetify(),
-    //store,
+    store,
     render: h => h(App),
     created() {
         try {

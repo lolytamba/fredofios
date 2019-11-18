@@ -3,6 +3,7 @@
     <v-navigation-drawer
       v-model="drawer"
       app
+      fixed
     >
       <v-list dense>
         <v-list-item link>
@@ -25,9 +26,11 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title>Admin Fredofios</v-toolbar-title>
     </v-app-bar>
-
+  
     <v-content>
+    <v-container>
       <router-view></router-view>
+    </v-container>
     </v-content>
 
     <v-footer
