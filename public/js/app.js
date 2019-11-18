@@ -64593,8 +64593,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\Kuliah\Sem 7\PPTA\Dari Loly\fredofios\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\Kuliah\Sem 7\PPTA\Dari Loly\fredofios\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\_ cek\fredofios\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\_ cek\fredofios\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

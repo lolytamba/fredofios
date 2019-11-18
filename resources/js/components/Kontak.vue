@@ -162,7 +162,6 @@ import { required, maxLength, minLength, numeric, email } from 'vuelidate/lib/va
           console.log(err)
         }
       },
-      
       reload(){
         window.location.reload()
       },
