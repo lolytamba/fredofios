@@ -33,6 +33,8 @@
 </template>
 
 <script>
+import Controller from './../service/Galeri'
+
   export default {
     data () {
       return {
@@ -51,7 +53,7 @@
       }
     },
     methods: {
-    
+     
     }
   }
 </script>
