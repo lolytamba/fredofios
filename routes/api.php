@@ -34,5 +34,19 @@ Route::group([
 Route::post('/galeri','GaleriController@store');
 Route::get('/galeri','GaleriController@index');
 Route::get('/galeri/{id}','GaleriController@show');
-Route::patch('/galeri/{id}','GaleriController@update');
+Route::post('/galeri/{id}','GaleriController@update');
 Route::delete('/galeri/{id}','GaleriController@destroy');
+
+//====================Api Akademik====================
+Route::post('/akademik','AkademikController@store');
+Route::get('/akademik','AkademikController@index');
+Route::get('/akademik/{id}','AkademikController@show');
+Route::post('/akademik/{id}','AkademikController@update');
+Route::delete('/akademik/{id}','AkademikController@destroy');
+
+//====================Api Akademik====================
+Route::post('/nonakademik','NonAkademikController@store');
+Route::get('/nonakademik','NonAkademikController@index');
+Route::get('/nonakademik/{id}','NonAkademikController@show');
+Route::post('/nonakademik/{id}','NonAkademikController@update');
+Route::delete('/nonakademik/{id}','NonAkademikController@destroy');

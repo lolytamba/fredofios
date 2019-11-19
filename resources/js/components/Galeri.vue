@@ -9,19 +9,17 @@
         <v-container fluid>
           <v-row dense>
             <v-col
-              v-for="card in cards"
-              :key="card.title"
-              :cols="card.flex"
+              v-for="galeri in galeries" :key="galeri.id"
+              :cols="6"
             >
               <v-card>
                 <v-img
-                  :src="card.src"
+                  :src="'/Galeri/'+galeri.gambar"
                   class="white--text align-end"
                   height="400px"
                 >
-                  <v-card-title v-text="card.title"></v-card-title>
                 </v-img>
-                 <v-card-text class="text--primary" v-text="card.desc"></v-card-text>
+                 <v-card-text class="text--primary">{{ galeri.judul }} </v-card-text>
               </v-card>
             </v-col>
           </v-row>
@@ -33,25 +31,33 @@
 </template>
 
 <script>
+import { mapGetters, mapState, mapActions } from 'vuex'
+
   export default {
     data () {
-      return {
-        cards: [
-        { title: 'Kuas Melukis', src: '/aset/1.JPG', flex: 6 },
-        { title: 'Angklung', src: '/aset/2.JPG', flex: 6 },
-        { title: 'Batik', src: '/aset/3.JPG', flex: 6 },
-        { title: 'Melukis', src: '/aset/4.JPG', flex: 6 },
-        { title: 'Musik', src: '/aset/5.JPG', flex: 6 },
-        { title: 'Karya Lukis', src: '/aset/7.JPG', flex: 6 },
-        { title: 'Membuat Gelang', src: '/aset/6.JPG', flex: 6 },
-        { title: 'Makan Siang', src: '/aset/8.JPG', flex: 6 },
-        { title: 'Galeri Olahraga', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',  flex: 6 },
-        { title: 'Galeri Melukis', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
-      ],
-      }
+      return {}
     },
-    methods: {
+
+    computed: {
+      ...mapState({
+        loading: state => state.Galeri.loading,
+        error: state => state.Galeri.error,
+        galeries: state => state.Galeri.galeries
+      }),
+
+      ...mapGetters({
+      form: 'Galeri/galeri',
+      }),
+    },
+
+    methods:{
+       ...mapActions({
+        fetch: 'Galeri/get',
+      }),
+    },
     
+    mounted () {
+        this.fetch()
     }
   }
 </script>

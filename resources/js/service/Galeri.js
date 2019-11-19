@@ -22,7 +22,7 @@ export default {
   async find (id) {
     try {
       const res = await http.get(`/api/galeri/${id}`)
-      console.log(res.data)
+      console.log(res.data.data[0])
       return res.data.data[0]
     } catch (err) {
       throw new Error('Gagal mendapatkan data galeri!')
@@ -31,7 +31,7 @@ export default {
 
   async update (id, payload) {
     try {
-      const res = await http.patch(`/api/galeri/${id}`, payload)
+      const res = await http.post(`/api/galeri/${id}`, payload)
 
       return res.data
     } catch (err) {

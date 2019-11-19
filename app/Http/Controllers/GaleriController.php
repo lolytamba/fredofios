@@ -28,8 +28,8 @@ class GaleriController extends RestController
     public function store(Request $request)
     {
         $this->validateWith([
-            'gambar.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'judul' => 'required|max:200',
+            'gambar.*' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'judul' => 'required',
           ]);
 
         $galeri = new Galeri();
@@ -48,8 +48,6 @@ class GaleriController extends RestController
 
         $response = $this->generateItem($galeri);
         return $this->sendResponse($response, 200);
-        
-        //return response()->json(['status' => 'success','msg'=>'Galeri Berhasil Ditambah'],201);
     }
 
     public function show($id)
@@ -62,8 +60,8 @@ class GaleriController extends RestController
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'gambar.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'judul' => 'required|max:200',
+            'gambar.*' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'judul' => 'required',
         ]);
 
         $galeri = Galeri::findOrFail($id);
@@ -75,7 +73,7 @@ class GaleriController extends RestController
                 unlink($gambarlama);
             }
             $image = $request->file('gambar');
-            $name = sha1(date('YmdHis') . str_random(30));
+            $name = sha1(date('YmdHis') . Str::random(30));
             $save_name = $name . '.' . $image->getClientOriginalExtension();
             $image->move($this->photos_path, $save_name);  
             $galeri->gambar=$save_name;

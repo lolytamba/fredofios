@@ -16,7 +16,7 @@
             <v-layout>
               <v-flex>
                 <img :src="imageUrl" height="200" v-if="imageUrl"/>
-                <img :src="'/Galeri/'+form.gambar" height="200" :alt="form.gambar" v-else-if="form.gambar"/>
+                <img :src="'/Galeri/'+form.gambar_galeri" height="200" :alt="form.gambar_galeri" v-else-if="form.gambar_galeri"/>
                 <img :src="defaultImg" height="200" v-else/>
                 <v-text-field 
                   label="Gambar*" 
@@ -25,8 +25,8 @@
                   required 
                   @click='pickFile'
                   :error-messages="gambarErrors"
-                  @input="$v.form.gambar.$touch()"
-                  @blur="$v.form.gambar.$touch()"
+                  @input="$v.form.gambar_galeri.$touch()"
+                  @blur="$v.form.gambar_galeri.$touch()"
                 />
                 <input  
                   type="file"
@@ -42,11 +42,11 @@
                 <v-text-field 
                   label="Judul*" 
                   class="pa-1"
-                  v-model="form.judul"
+                  v-model="form.judul_galeri"
                   required 
                   :error-messages="judulErrors"
-                  @input="$v.form.judul.$touch()"
-                  @blur="$v.form.judul.$touch()"
+                  @input="$v.form.judul_galeri.$touch()"
+                  @blur="$v.form.judul_galeri.$touch()"
                 />
               </v-flex>
             </v-layout>
@@ -67,7 +67,17 @@
           </VForm>
         </v-card>
       </v-dialog>
-
+      <v-dialog
+        v-model="dialogTambah"
+        width="300"
+      >
+        <v-card color="green">
+        <v-card-text class="white--text text-center title" style="padding-top: 20px;">
+        <v-icon dark right>mdi-checkbox-marked-circle</v-icon>
+          Foto berhasil ditambah
+        </v-card-text>
+        </v-card>
+      </v-dialog>
       <!-- ini pop up edit-->
       <v-dialog v-model="dialog2" persistent max-width="600px">
         <v-card>
@@ -79,7 +89,7 @@
             <v-layout>
               <v-flex>
                 <img :src="imageUrl" height="200" v-if="imageUrl"/>
-                <img :src="'/Galeri/'+form.gambar" height="200" :alt="form.gambar" v-else-if="form.gambar"/>
+                <img :src="'/Galeri/'+form.gambar_galeri" height="200" :alt="form.gambar_galeri" v-else-if="form.gambar_galeri"/>
                 <img :src="defaultImg" height="200" v-else/>
                 <v-text-field 
                   label="Gambar*" 
@@ -88,8 +98,8 @@
                   required 
                   @click='pickFile'
                   :error-messages="gambarErrors"
-                  @input="$v.form.gambar.$touch()"
-                  @blur="$v.form.gambar.$touch()"
+                  @input="$v.form.gambar_galeri.$touch()"
+                  @blur="$v.form.gambar_galeri.$touch()"
                 />
                 <input  
                   type="file"
@@ -105,11 +115,11 @@
                 <v-text-field 
                   label="Judul*" 
                   class="pa-1"
-                  v-model="form.judul"
+                  v-model="form.judul_galeri"
                   required 
                   :error-messages="judulErrors"
-                  @input="$v.form.judul.$touch()"
-                  @blur="$v.form.judul.$touch()"
+                  @input="$v.form.judul_galeri.$touch()"
+                  @blur="$v.form.judul_galeri.$touch()"
                 />
               </v-flex>
             </v-layout>
@@ -132,6 +142,18 @@
         </v-card>
       </v-dialog>
 
+      <v-dialog
+        v-model="dialogEdit"
+        width="300"
+      >
+        <v-card color="green">
+        <v-card-text class="white--text text-center title" style="padding-top: 20px;">
+        <v-icon dark right>mdi-checkbox-marked-circle</v-icon>
+          Foto berhasil diedit
+        </v-card-text>
+        </v-card>
+      </v-dialog>
+
      <!-- ini pop up buat delete-->
       <v-dialog v-model="dialog3" persistent max-width="500">
         <v-card>
@@ -142,6 +164,18 @@
             <VBtn class="mb-4" depressed dark color="blue darken-1"  @click="dialog3 = false">No</VBtn>
             <v-spacer/>
           </v-card-actions>
+        </v-card>
+      </v-dialog>
+
+      <v-dialog
+        v-model="dialogDelete"
+        width="300"
+      >
+        <v-card color="green">
+        <v-card-text class="white--text text-center title" style="padding-top: 20px;">
+        <v-icon dark right>mdi-checkbox-marked-circle</v-icon>
+          Foto berhasil dihapus
+        </v-card-text>
         </v-card>
       </v-dialog>
 
@@ -159,6 +193,7 @@
       :items="items"
       :search="search"
       class="my-data-table"
+      action
     > 
     <template
         slot="headerCell"
@@ -177,18 +212,18 @@
       slot-scope="props">
       <td>{{ props.item.judul }}</td>
     </template>
-    <template v-slot:item.action="{ item }">
+   <template #item.action="props">
       <v-icon
         small
         color="green"
-        @click="editGaleri(item.id)"
+        @click="editGaleri(props.item.id)"
       >
         edit
       </v-icon>
       <v-icon
         small
         color="red"
-        @click="deleteGaleri(item.id)"
+        @click="deleteGaleri(props.item.id)"
       >
         delete
       </v-icon>
@@ -214,8 +249,8 @@ import { required, maxLength, minLength, numeric } from 'vuelidate/lib/validator
 
     validations: {
       form: {
-        gambar: { required },
-        judul: { required },
+        gambar_galeri: { required },
+        judul_galeri: { required },
       },   
     },
 
@@ -228,20 +263,22 @@ import { required, maxLength, minLength, numeric } from 'vuelidate/lib/validator
         dialog: false,
         dialog2: false,
         dialog3: false,
+        dialogTambah: false,
+        dialogEdit: false,
+        dialogDelete: false,
         headers: [
             {
-            text: 'Gambar',
-            align: 'center',
-            sortable: false,
-            value: 'gambar',
+              text: 'Gambar',
+              align: 'center',
+              sortable: false,
+              value: 'gambar',
             },
             { text: 'Judul',  
-            align: 'center', 
-            value: 'judul' 
+              align: 'center', 
+              value: 'judul' 
             },
             {
-              text: 'Actions',
-              align: 'center', 
+              text: 'Actions', 
               sortable: false,
               value: 'action'
             }
@@ -262,15 +299,15 @@ import { required, maxLength, minLength, numeric } from 'vuelidate/lib/validator
 
         gambarErrors () {
           const errors = []
-          if (!this.$v.form.gambar.$dirty) return errors       
-          !this.$v.form.gambar.required && errors.push('Gambar tidak boleh kosong.')
+          if (!this.$v.form.gambar_galeri.$dirty) return errors       
+          !this.$v.form.gambar_galeri.required && errors.push('Gambar tidak boleh kosong.')
           return errors
         },
 
         judulErrors(){
           const errors = []
-          if (!this.$v.form.judul.$dirty) return errors      
-          !this.$v.form.judul.required && errors.push('Judul tidak boleh kosong.')
+          if (!this.$v.form.judul_galeri.$dirty) return errors      
+          !this.$v.form.judul_galeri.required && errors.push('Judul tidak boleh kosong.')
           return errors
         },
     },
@@ -299,8 +336,8 @@ import { required, maxLength, minLength, numeric } from 'vuelidate/lib/validator
           fr.readAsDataURL(files[0])
           fr.addEventListener('load', () => {
             this.imageUrl = fr.result
-            this.form.gambar = files[0] // this is an image file that can be sent to server...
-            console.log("tes")
+            this.form.gambar_galeri = files[0] // this is an image file that can be sent to server...
+            console.log(this.form.gambar_galeri)
           })
         } else {
           this.imageName = ''
@@ -310,16 +347,18 @@ import { required, maxLength, minLength, numeric } from 'vuelidate/lib/validator
       
 
       async submitHandler(){
-        const payload = {
-            gambar: this.form.gambar,
-            judul: this.form.judul,
-        }
+        console.log(this.form.gambar_galeri)
 
+        let payload = new FormData();
+        payload.append('gambar', this.form.gambar_galeri)
+        payload.append('judul', this.form.judul_galeri)
+        
           await this.add(payload)
         
           if (!this.error) {
             this.dialog=false
             this.fetch()
+            this.dialogTambah=true
           }         
       },
 
@@ -328,6 +367,24 @@ import { required, maxLength, minLength, numeric } from 'vuelidate/lib/validator
         this.dialog2=true
         this.find(id)
         console.log(id)
+      },
+
+      async editHandler () {
+        const payload = {
+          id: this.id_galeri,
+          gambar: this.form.gambar_galeri,
+          judul: this.form.judul_galeri,
+        }
+
+        console.log(payload)
+
+        await this.edit(payload)
+      
+        if (!this.Error) {
+          this.dialog2=false
+          this.dialogEdit=true
+          this.fetch()
+        }
       },
 
       deleteGaleri(id){
@@ -340,22 +397,9 @@ import { required, maxLength, minLength, numeric } from 'vuelidate/lib/validator
         await this.delete(this.id_galeri)
         this.fetch()
         this.dialog3=false
+        this.dialogDelete=true
       },
-
-      async editHandler () {
-        const payload = {
-          id: this.id_galeri,
-          gambar: this.form.gambar,
-          judul: this.form.judul,
-        }
-
-        await this.edit(payload)
       
-        if (!this.Error) {
-          this.dialog2=false
-          this.fetch()
-        }
-      },
     },
 
     mounted () {

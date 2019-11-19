@@ -63,11 +63,12 @@ const actions = {
 
   async update(context, payload) {
     try {
-      const data = {
-        gambar : payload.gambar,
-        judul: payload.judul,
-      }
+      let data = new FormData();
+      data.append('gambar', payload.gambar)
+      data.append('judul', payload.judul)
+
       console.log(data)
+      
       await galeriService.update(payload.id, data)
     } catch (err) {
       context.commit('setFailedAction', err)
@@ -83,7 +84,7 @@ const actions = {
   },
 
   resetForm(context) {
-    context.commit('setCabangForm', {})
+    context.commit('setGaleriForm', {})
   }
 }
 
