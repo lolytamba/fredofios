@@ -18,6 +18,9 @@ import AddGaleri from './components/AddGaleri'
 import Login from './components/Login'
 import AddAkademik from './components/AddAkademik'
 import AddNonAkademik from './components/AddNonAkademik'
+import AddFasilitas from './components/AddFasilitas'
+import AddStaff from './components/AddStaff'
+import AddVisiMisi from './components/AddVisiMisi'
 
 export const routes = [
     {
@@ -116,6 +119,21 @@ export const routes = [
           path: '/AddNonAkademik',
           name: 'AddNonAkademik',
           component: AddNonAkademik,
+        },
+        {
+          path: '/AddFasilitas',
+          name: 'AddFasilitas',
+          component: AddFasilitas,
+        },
+        {
+          path: '/AddStaff',
+          name: 'AddStaff',
+          component: AddStaff,
+        },
+        {
+          path: '/AddVisiMisi',
+          name: 'AddVisiMisi',
+          component: AddVisiMisi,
         },
       ]
     }

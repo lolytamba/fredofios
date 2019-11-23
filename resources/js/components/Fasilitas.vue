@@ -9,8 +9,8 @@
     <v-container fluid>
         <v-row>
           <v-col
-            v-for="card in cards"
-            :key="card.title"
+            v-for="facility in facilities"
+            :key="facility.id"
             :cols="12"
           >
             <v-card
@@ -19,17 +19,13 @@
               height="auto"
             >
               <v-img
-                :src="card.src"
+                :src="'/Fasilitas/'+facility.gambar"
                 class="white--text align-end"
                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                height="300px"
+                height="400px"
                 >
-                <v-card-title>{{ card.title }}</v-card-title>
+                <v-card-title>{{ facility.judul }}</v-card-title>
               </v-img>
-
-              <v-card-text class="text--primary">
-                <div>{{ card.text }}</div>
-              </v-card-text>
             </v-card>
           </v-col>
         </v-row>
@@ -40,37 +36,33 @@
 </template>
 
 <script>
+import { mapGetters, mapState, mapActions } from 'vuex'
+
   export default {
     data () {
-      return {
-        cards: [
-          {
-            title: 'Ruang Kelas',
-            src: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lafayette_High_School_%28Lexington%2C_KY%29_in_August_2019.jpg',
-            text: 'lorem ipsum'
-          },
-          {
-            title: 'Hall',
-            src: 'https://www.expatica.com/uk/wp-content/uploads/sites/10/2019/01/School-Holidays-1920x1080.jpg',
-            text: 'lorem ipsum'
-          },
-          {
-            title: 'Ruang Komputer',
-            src: 'https://www.thelocal.se/userdata/images/article/f399c757d392dd0d8bdfc817a9993176f527de128bb7d1928a85c9ce0c0aabd5.jpg',
-            text: 'lorem ipsum'
-          },
-          {
-            title: 'Ruang UKS',
-            src: 'https://www.warringtonguardian.co.uk/resources/images/10137723.jpg?display=1&htype=0&type=responsive-gallery',
-            text: 'lorem ipsum'
-          },
-          {
-            title: 'Ruang Musik',
-            src: 'https://www.expatica.com/uk/wp-content/uploads/sites/10/2019/01/School-Holidays-1920x1080.jpg',
-            text: 'lorem ipsum'
-          },
-        ]
-      }
+      return {}
     },
+
+    computed: {
+      ...mapState({
+        loading: state => state.Facility.loading,
+        error: state => state.Facility.error,
+        facilities: state => state.Facility.facilities
+      }),
+
+      ...mapGetters({
+      form: 'Facility/facility',
+      }),
+    },
+
+    methods:{
+       ...mapActions({
+        fetch: 'Facility/get',
+      }),
+    },
+    
+    mounted () {
+        this.fetch()
+    }
   }
 </script>
