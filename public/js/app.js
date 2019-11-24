@@ -4941,6 +4941,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       search: '',
       items: [],
       Misi: {
+        id: '',
         isi_misi: ''
       },
       dialog: false,
@@ -5084,8 +5085,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       return find;
     }(),
-    editMisi: function editMisi(id) {
-      this.id_misi = id;
+    editMisi: function editMisi(item) {
+      //this.id_misi=id
+      this.isi_misi = item.isi_misi;
+      this.id = item.id;
+      console.log(this.isi_misi);
+      console.log(this.id);
       this.dialog2 = true;
     },
     deleteMisi: function deleteMisi(id) {
@@ -5095,44 +5100,40 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     editHandler: function () {
       var _editHandler = _asyncToGenerator(
       /*#__PURE__*/
-      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(id) {
         var payload;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
                 _context4.prev = 0;
-                console.log("tes");
                 payload = {
-                  id: this.id_misi,
                   isi_misi: this.isi_misi
                 };
-                console.log(payload);
-                _context4.next = 6;
-                return _service_Misi__WEBPACK_IMPORTED_MODULE_2__["default"].update(payload);
+                _context4.next = 4;
+                return _service_Misi__WEBPACK_IMPORTED_MODULE_2__["default"].update(id, payload);
 
-              case 6:
-                console.log("tes2");
+              case 4:
                 this.get();
                 this.dialog2 = false;
                 this.dialogEdit = true;
-                _context4.next = 15;
+                _context4.next = 12;
                 break;
 
-              case 12:
-                _context4.prev = 12;
+              case 9:
+                _context4.prev = 9;
                 _context4.t0 = _context4["catch"](0);
                 console.log(_context4.t0);
 
-              case 15:
+              case 12:
               case "end":
                 return _context4.stop();
             }
           }
-        }, _callee4, this, [[0, 12]]);
+        }, _callee4, this, [[0, 9]]);
       }));
 
-      function editHandler() {
+      function editHandler(_x2) {
         return _editHandler.apply(this, arguments);
       }
 
@@ -13267,7 +13268,7 @@ var render = function() {
             "v-card",
             [
               _c("v-card-title", [
-                _c("span", { staticClass: "headline" }, [_vm._v("Edit Foto")])
+                _c("span", { staticClass: "headline" }, [_vm._v("Edit Misi")])
               ]),
               _vm._v(" "),
               _c(
@@ -13332,7 +13333,7 @@ var render = function() {
                           },
                           on: {
                             click: function($event) {
-                              return _vm.editHandler()
+                              return _vm.editHandler(_vm.id)
                             }
                           }
                         },
@@ -13391,7 +13392,7 @@ var render = function() {
                   _c("v-icon", { attrs: { dark: "", right: "" } }, [
                     _vm._v("mdi-checkbox-marked-circle")
                   ]),
-                  _vm._v("\n       Foto berhasil diedit\n     ")
+                  _vm._v("\n       Misi berhasil diedit\n     ")
                 ],
                 1
               )
@@ -13580,7 +13581,7 @@ var render = function() {
                       attrs: { small: "", color: "green" },
                       on: {
                         click: function($event) {
-                          return _vm.editMisi(props.item.id)
+                          return _vm.editMisi(props.item)
                         }
                       }
                     },
@@ -76364,8 +76365,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\Kuliah\Sem 7\PPTA\Dari Loly\fredofios\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\Kuliah\Sem 7\PPTA\Dari Loly\fredofios\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\_ cek\fredofios\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\_ cek\fredofios\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -58,7 +58,7 @@
       <v-dialog v-model="dialog2" persistent max-width="600px">
         <v-card>
           <v-card-title>
-            <span class="headline">Edit Foto</span>
+            <span class="headline">Edit Misi</span>
           </v-card-title>
           <VForm>
           <v-card-text>
@@ -83,7 +83,7 @@
               <VBtn
               depressed
               color="info"
-              @click="editHandler()"
+              @click="editHandler(id)"
               :disabled="this.$v.$invalid"
             >
               Simpan
@@ -101,7 +101,7 @@
         <v-card color="green">
         <v-card-text class="white--text text-center title" style="padding-top: 20px;">
         <v-icon dark right>mdi-checkbox-marked-circle</v-icon>
-          Foto berhasil diedit
+          Misi berhasil diedit
         </v-card-text>
         </v-card>
       </v-dialog>
@@ -165,7 +165,7 @@
       <v-icon
         small
         color="green"
-        @click="editMisi(props.item.id)"
+        @click="editMisi(props.item)"
       >
         edit
       </v-icon>
@@ -206,6 +206,7 @@ import Controller from './../service/Misi'
         search: '',
         items:[],
         Misi:{
+            id:'',
             isi_misi: '',
         },
         dialog: false,
@@ -268,8 +269,12 @@ import Controller from './../service/Misi'
             }
         },
 
-        editMisi(id){
-            this.id_misi=id
+        editMisi(item){
+            //this.id_misi=id
+            this.isi_misi = item.isi_misi
+            this.id =item.id
+            console.log(this.isi_misi)
+            console.log(this.id)
             this.dialog2=true
         },
 
@@ -278,16 +283,12 @@ import Controller from './../service/Misi'
             this.dialog3=true
         },
 
-        async editHandler(){
+        async editHandler(id){
             try{
-                console.log("tes")
                 const payload = {
-                    id: this.id_misi,
-                    isi_misi: this.isi_misi,
+                    isi_misi  : this.isi_misi,
                 } 
-                console.log(payload)
-                await Controller.update(payload)
-                console.log("tes2")
+                await Controller.update(id,payload)
                 this.get()
                 this.dialog2=false
                 this.dialogEdit=true
