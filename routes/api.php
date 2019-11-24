@@ -93,3 +93,9 @@ Route::get('/carousel','CarouselController@index');
 Route::get('/carousel/{id}','CarouselController@show');
 Route::post('/carousel/{id}','CarouselController@update');
 Route::delete('/carousel/{id}','CarouselController@destroy');
+//====================Api Artikel====================
+Route::post('/artikel','ArtikelController@store');
+Route::get('/artikel','ArtikelController@index');
+Route::get('/artikel/{id}','ArtikelController@show');
+Route::post('/artikel/{id}','ArtikelController@update');
+Route::delete('/artikel/{id}','ArtikelController@destroy');

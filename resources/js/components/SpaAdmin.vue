@@ -60,6 +60,7 @@
             <v-list-item-title>Visi Misi</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+<<<<<<< HEAD
       </v-list>
 
        <v-list-item link>
@@ -71,6 +72,18 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+=======
+      
+      <v-list-item link>
+          <v-list-item-action>
+            <v-icon>assignment</v-icon>
+          </v-list-item-action>
+          <v-list-item-content @click="AddArtikel">
+            <v-list-item-title>Artikel</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+>>>>>>> 9de4f97498a329e814ebb9896c06931d9cecb41a
     </v-navigation-drawer>
 
     <v-app-bar
@@ -113,9 +126,7 @@
 
     methods: {
       logoutHandler() {
-        axios.post('api/auth/logout').then(response => {
-          this.$router.push({path: 'AddGaleri'});
-        })
+         this.$router.push({path: 'login'});
       },
       AddGaleri(){
           this.$router.push({ name : 'AddGaleri' })
@@ -138,6 +149,9 @@
       AddTentang(){
           this.$router.push({ name : 'AddTentang' })
       },
+      AddArtikel(){
+        this.$router.push({ name: 'AddArtikel'})
+      }
     },
   }
 </script>

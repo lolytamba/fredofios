@@ -6,9 +6,6 @@ import Kontak from './components/Kontak'
 import Artikel from './components/Artikel'
 import Galeri from './components/Galeri'
 import Staff from './components/Staff'
-import Berita from './components/Berita1'
-import Berita2 from './components/Berita2'
-import Berita3 from './components/Berita3'
 import Fasilitas from './components/Fasilitas'
 import Akademik from './components/Akademik'
 import NonAkademik from './components/NonAkademik'
@@ -22,6 +19,7 @@ import AddFasilitas from './components/AddFasilitas'
 import AddStaff from './components/AddStaff'
 import AddVisiMisi from './components/AddVisiMisi'
 import AddTentang from './components/AddTentang'
+import AddArtikel from './components/AddArtikel'
 
 export const routes = [
     {
@@ -63,21 +61,6 @@ export const routes = [
           path: 'staff',
           name: 'staff',
           component: Staff,
-        },
-        {
-          path: 'artikel/berita1',
-          name: 'berita1',
-          component: Berita,
-        },
-        {
-          path: 'artikel/berita2',
-          name: 'berita2',
-          component: Berita2,
-        },
-        {
-          path: 'artikel/berita3',
-          name: 'berita3',
-          component: Berita3,
         },
         {
           path: 'fasilitas',
@@ -141,6 +124,11 @@ export const routes = [
           name: 'AddTentang',
           component: AddTentang,
         },
+        {
+          path: '/AddArtikel',
+          name: 'AddArtikel',
+          component: AddArtikel,
+        }
       ]
     }
   ];
