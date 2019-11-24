@@ -27,6 +27,7 @@ Route::group([
     'prefix' => 'auth'
 ], function ($router) {
     Route::post('/login','UserController@login'); //web platform
+    Route::post('/logout', 'UserController@logout');
 });
 
 
@@ -71,3 +72,24 @@ Route::get('/misi','MisiController@index');
 Route::get('/misi/{id}','MisiController@show');
 Route::post('/misi/{id}','MisiController@update');
 Route::delete('/misi/{id}','MisiController@destroy');
+
+//====================Api Visi====================
+Route::post('/visi','VisiController@store');
+Route::get('/visi','VisiController@index');
+Route::get('/visi/{id}','VisiController@show');
+Route::patch('/visi/{id}','VisiController@update');
+Route::delete('/visi/{id}','VisiController@destroy');
+
+//====================Api Tentang====================
+Route::post('/tentang','TentangController@store');
+Route::get('/tentang','TentangController@index');
+Route::get('/tentang/{id}','TentangController@show');
+Route::patch('/tentang/{id}','TentangController@update');
+Route::delete('/tentang/{id}','TentangController@destroy');
+
+//====================Api Carousel====================
+Route::post('/carousel','CarouselController@store');
+Route::get('/carousel','CarouselController@index');
+Route::get('/carousel/{id}','CarouselController@show');
+Route::post('/carousel/{id}','CarouselController@update');
+Route::delete('/carousel/{id}','CarouselController@destroy');

@@ -321,6 +321,10 @@ import { required, maxLength, minLength, numeric } from 'vuelidate/lib/validator
         delete: 'Galeri/delete'
       }),
 
+      reload(){
+        window.location.reload()
+      }, 
+
       pickFile () {
         this.$refs.image.click ()
       },
@@ -354,11 +358,12 @@ import { required, maxLength, minLength, numeric } from 'vuelidate/lib/validator
         payload.append('judul', this.form.judul_galeri)
         
           await this.add(payload)
-        
+
           if (!this.error) {
             this.dialog=false
             this.fetch()
             this.dialogTambah=true
+            this.reload()
           }         
       },
 
@@ -384,6 +389,7 @@ import { required, maxLength, minLength, numeric } from 'vuelidate/lib/validator
           this.dialog2=false
           this.dialogEdit=true
           this.fetch()
+          this.reload()
         }
       },
 

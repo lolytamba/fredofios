@@ -14,11 +14,11 @@
           show-arrows-on-hover
         >
             <v-carousel-item
-              v-for="(slide, i) in slides"
-              :key="slide.title"
+              v-for="(carousel, i) in carousels"
+              :key="carousel.id"
             >
             <v-img 
-              :src="slide.src"
+              :src="'/Carousel/'+carousel.gambar"
               height="100%"
               class="white--text align-end">
               <v-row
@@ -26,7 +26,7 @@
                 align="center"
                 justify="center"
               >
-              <div class="display-3">{{ slide.title }}</div>
+              <div class="display-3">{{ carousel.judul }}</div>
               </v-row>
             </v-img>
             </v-carousel-item>
@@ -41,19 +41,10 @@
        </v-flex>
        <br>
 
-       <v-flex class="title font-weight-regular">
-          Sekolah Lanjutan Autis (SLA) Fredofios berdiri pada tanggal 3 April 2003. SLA Fredofios  
-          merupakan salah satu sekolah luar
-          biasa yang berada di Yogyakarta untuk pelajar dengan Autism Spectrum Disorder (ASD).
-          <br><br>
-          Fredofios terletak di sebidang tanah seluas 400 m dan bangunan 370m beralamat di JL. Seturan II 
-          Perumnas Gg Indragiri B/II Condongsari Depok Sleman Yogyakarta, tepatnya berada diarah utara
-          selokan mataram. Sekolah khusus untuk remaja autis usia 10 - 23 tahun pada jenjang SMOLB dan SMALB.
-          Fredofios memiliki sekitar 18 pelajar dan xx anggota staff sekolah. Fredofios dibawah naungan Yayasan Autisma Nusantara.
-          <br><br>
-          Pembelajaran Anak dan Remaja Autis di Fredofios lebih
-          mengarah ke Life Skill, dengan porsi belajar Keterampilan dan Seni 80% yang disesuaikan dengan Minat dan Potensi dari masing-masing siswa.
-          Setiap anak digali potensinya dan dikembangkan sesuai potensi yang dimilikinya. Sehingga setiap anak akan berkembang sesuai mnat dan bakatnya masing-masing.</p>
+       <v-flex class="title font-weight-regular"
+          v-for="(item, i) in items"
+          :key="i">
+          {{ item.isi_tentang }}
        </v-flex>
       </v-card-text>
     </v-container>
@@ -63,9 +54,16 @@
 </template>
 
 <script>
+import Controller from './../service/Tentang'
+import { mapGetters, mapState, mapActions } from 'vuex'
+
   export default {
     data () {
       return {
+        items: [],
+        item:{
+          isi_tentang :'',
+        },
         slides: [
           {
             title: 'Mandiri',
@@ -86,8 +84,37 @@
         ]
       }
     },
+
+    computed: {
+      ...mapState({
+        loading: state => state.Carousel.loading,
+        error: state => state.Carousel.error,
+        carousels: state => state.Carousel.carousels
+      }),
+
+      ...mapGetters({
+      form: 'Carousel/carousel',
+      }),
+    },
+
     methods: {
-      
+       async get(){
+          try{
+              this.items = (await Controller.get())
+          }catch(err){
+              console.log(err)
+          }
+        },
+
+        ...mapActions({
+        fetch: 'Carousel/get',
+      }),
+        
+    },
+
+     mounted(){
+      this.get()
+      this.fetch()
     },
   }
 </script>

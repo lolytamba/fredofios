@@ -360,6 +360,10 @@ import { required, maxLength, minLength, numeric } from 'vuelidate/lib/validator
         delete: 'Akademik/delete'
       }),
 
+      reload(){
+        window.location.reload()
+      }, 
+
       pickFile () {
         this.$refs.image.click ()
       },
@@ -396,6 +400,7 @@ import { required, maxLength, minLength, numeric } from 'vuelidate/lib/validator
             this.dialog=false
             this.fetch()
             this.dialogTambah=true
+            this.reload()
           }         
       },
 
@@ -422,6 +427,7 @@ import { required, maxLength, minLength, numeric } from 'vuelidate/lib/validator
           this.dialog2=false
           this.dialogEdit=true
           this.fetch()
+          this.reload()
         }
       },
 

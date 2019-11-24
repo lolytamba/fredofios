@@ -61,6 +61,16 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+
+       <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-playlist-plus</v-icon>
+          </v-list-item-action>
+          <v-list-item-content @click="AddTentang">
+            <v-list-item-title>Tentang</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
     </v-navigation-drawer>
 
     <v-app-bar
@@ -70,6 +80,11 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title>Admin Fredofios</v-toolbar-title>
+      <div class="logout">
+        <v-btn class="mx-2" fab dark small color="indigo darken-4"  @click="logoutHandler">
+          <v-icon dark>mdi-logout</v-icon>
+        </v-btn>
+      </div>
     </v-app-bar>
   
     <v-content>
@@ -97,6 +112,11 @@
     },
 
     methods: {
+      logoutHandler() {
+        axios.post('api/auth/logout').then(response => {
+          this.$router.push({path: 'AddGaleri'});
+        })
+      },
       AddGaleri(){
           this.$router.push({ name : 'AddGaleri' })
       },
@@ -115,6 +135,16 @@
       AddVisiMisi(){
           this.$router.push({ name : 'AddVisiMisi' })
       },
+      AddTentang(){
+          this.$router.push({ name : 'AddTentang' })
+      },
     },
   }
 </script>
+
+<style>
+div.logout{
+  position: relative;
+  left: 800px;
+}
+</style>

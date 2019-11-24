@@ -21,6 +21,7 @@ import AddNonAkademik from './components/AddNonAkademik'
 import AddFasilitas from './components/AddFasilitas'
 import AddStaff from './components/AddStaff'
 import AddVisiMisi from './components/AddVisiMisi'
+import AddTentang from './components/AddTentang'
 
 export const routes = [
     {
@@ -134,6 +135,11 @@ export const routes = [
           path: '/AddVisiMisi',
           name: 'AddVisiMisi',
           component: AddVisiMisi,
+        },
+        {
+          path: '/AddTentang',
+          name: 'AddTentang',
+          component: AddTentang,
         },
       ]
     }
