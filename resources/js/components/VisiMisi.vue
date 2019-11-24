@@ -20,12 +20,10 @@
                     v-for="(item, i) in items"
                     :key="i"
                 >
-                    <v-list-item-icon>
-                        <v-icon v-text="item.icon" color="orange darken-2"></v-icon>
-                    </v-list-item-icon>
-                    <v-list-item-content>
-                        <v-list-item-text v-text="item.text"></v-list-item-text>
-                    </v-list-item-content>
+                  <v-icon color="orange darken-2">wb_sunny</v-icon>
+                  <v-list-item-content>
+                      <v-list-item-text v-text="item.isi_misi"></v-list-item-text>
+                  </v-list-item-content>
                 </v-list-item>
         </v-list>
 
@@ -35,21 +33,32 @@
 </template>
 
 <script>
+import Controller from './../service/Misi'
+
   export default {
     data () {
       return {
-        item: 1,
-        items: [
-            { text: 'Menyelenggarakan pembelajaran dengan pendekatan Pakem dan CTL secara efektif, terus menerus dan berkesinambungan sehingga setiap siswa dapat berkembang secara optimal.', icon: 'filter_1' },
-            { text: 'Menerapkan manajemen peningkatan mutu berbasis sekolah yang ditunjukkan dengan kemandirian, kemitraan, partisipasi, keterbukaan, dan akuntabilitas.', icon: 'filter_2' },
-            { text: 'Meningkatkan kualitas dan kuantitas tenaga pendidik dan tenaga kependidikan melalui uji sertifikasi, peningkatan kualifikasi, pengiriman diklat, dan pertemuan-pertemuan ilmiah.', icon: 'filter_3' },
-            { text: 'Menumbuhkan semangat keunggulan secara intensif kepada semua warga sekolah.', icon: 'filter_4' },
-            { text: 'Pengadaan sarana prasaran sekolah yang memenuhi standar minimal.', icon: 'filter_5' },
-            { text: 'Menjalin hubungan kerja sama dengan instansi pemerintah, masyarakat, dunia usaha, dan industri.', icon: 'filter_6' },
-            { text: 'Menumbuh kembangkan pengalaman agama, budaya luhur semua warga sekolah.', icon: 'filter_7' },
-            { text: 'Meningkatkan citra, harkat, dan martabat anak berkebutuhan khusus sehingga tidak mendapatkan perlakuan yang diskriminatif dari pihak manapun.', icon: 'filter_8' },
-        ],
+        i: 1,
+        items: [],
+        item:{
+          isi_misi :'',
+        },
       }
     },
+
+    methods: {
+      async get(){
+            try{
+                this.items = (await Controller.get())
+            }catch(err){
+                console.log(err)
+            }
+        },
+    },
+
+    mounted(){
+      this.get()
+    },
+
   }
 </script>

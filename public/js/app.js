@@ -6903,6 +6903,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _service_Misi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../service/Misi */ "./resources/js/service/Misi.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -6937,38 +6946,57 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      item: 1,
-      items: [{
-        text: 'Menyelenggarakan pembelajaran dengan pendekatan Pakem dan CTL secara efektif, terus menerus dan berkesinambungan sehingga setiap siswa dapat berkembang secara optimal.',
-        icon: 'filter_1'
-      }, {
-        text: 'Menerapkan manajemen peningkatan mutu berbasis sekolah yang ditunjukkan dengan kemandirian, kemitraan, partisipasi, keterbukaan, dan akuntabilitas.',
-        icon: 'filter_2'
-      }, {
-        text: 'Meningkatkan kualitas dan kuantitas tenaga pendidik dan tenaga kependidikan melalui uji sertifikasi, peningkatan kualifikasi, pengiriman diklat, dan pertemuan-pertemuan ilmiah.',
-        icon: 'filter_3'
-      }, {
-        text: 'Menumbuhkan semangat keunggulan secara intensif kepada semua warga sekolah.',
-        icon: 'filter_4'
-      }, {
-        text: 'Pengadaan sarana prasaran sekolah yang memenuhi standar minimal.',
-        icon: 'filter_5'
-      }, {
-        text: 'Menjalin hubungan kerja sama dengan instansi pemerintah, masyarakat, dunia usaha, dan industri.',
-        icon: 'filter_6'
-      }, {
-        text: 'Menumbuh kembangkan pengalaman agama, budaya luhur semua warga sekolah.',
-        icon: 'filter_7'
-      }, {
-        text: 'Meningkatkan citra, harkat, dan martabat anak berkebutuhan khusus sehingga tidak mendapatkan perlakuan yang diskriminatif dari pihak manapun.',
-        icon: 'filter_8'
-      }]
+      i: 1,
+      items: [],
+      item: {
+        isi_misi: ''
+      }
     };
+  },
+  methods: {
+    get: function () {
+      var _get = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return _service_Misi__WEBPACK_IMPORTED_MODULE_1__["default"].get();
+
+              case 3:
+                this.items = _context.sent;
+                _context.next = 9;
+                break;
+
+              case 6:
+                _context.prev = 6;
+                _context.t0 = _context["catch"](0);
+                console.log(_context.t0);
+
+              case 9:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this, [[0, 6]]);
+      }));
+
+      function get() {
+        return _get.apply(this, arguments);
+      }
+
+      return get;
+    }()
+  },
+  mounted: function mounted() {
+    this.get();
   }
 });
 
@@ -16309,22 +16337,15 @@ var render = function() {
                       "v-list-item",
                       { key: i },
                       [
-                        _c(
-                          "v-list-item-icon",
-                          [
-                            _c("v-icon", {
-                              attrs: { color: "orange darken-2" },
-                              domProps: { textContent: _vm._s(item.icon) }
-                            })
-                          ],
-                          1
-                        ),
+                        _c("v-icon", { attrs: { color: "orange darken-2" } }, [
+                          _vm._v("wb_sunny")
+                        ]),
                         _vm._v(" "),
                         _c(
                           "v-list-item-content",
                           [
                             _c("v-list-item-text", {
-                              domProps: { textContent: _vm._s(item.text) }
+                              domProps: { textContent: _vm._s(item.isi_misi) }
                             })
                           ],
                           1
