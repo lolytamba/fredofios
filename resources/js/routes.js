@@ -16,7 +16,8 @@ import VisiMisi from './components/VisiMisi'
 import SpaAdmin from './components/SpaAdmin'
 import AddGaleri from './components/AddGaleri'
 import Login from './components/Login'
-//import { auth } from '../../../../../../Sem 6/Project_P3L_UAS_8858_8973_9065/SIAA-Web/resources/js/middleware'
+import AddAkademik from './components/AddAkademik'
+import AddNonAkademik from './components/AddNonAkademik'
 
 export const routes = [
     {
@@ -105,6 +106,16 @@ export const routes = [
           path: '/AddGaleri',
           name: 'AddGaleri',
           component: AddGaleri,
+        },
+        {
+          path: '/AddAkademik',
+          name: 'AddAkademik',
+          component: AddAkademik,
+        },
+        {
+          path: '/AddNonAkademik',
+          name: 'AddNonAkademik',
+          component: AddNonAkademik,
         },
       ]
     }

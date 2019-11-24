@@ -9,20 +9,19 @@
         <v-container fluid>
           <v-row dense>
             <v-col
-              v-for="card in cards"
-              :key="card.title"
-              :cols="card.flex"
+              v-for="akademik in akademiks" :key="akademik.id"
+              :cols="6"
             >
               <v-card>
                 <v-img
-                  :src="card.src"
+                  :src="'/Akademik/'+akademik.gambar"
                   class="white--text align-end"
                   gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                   height="400px"
                 >
-                  <v-card-title v-text="card.title"></v-card-title>
                 </v-img>
-                 <v-card-text class="text--primary" v-text="card.desc"></v-card-text>
+                <v-card-title>{{ akademik.judul }}</v-card-title>
+                 <v-card-text class="text--primary"> {{ akademik.keterangan }} </v-card-text>
               </v-card>
             </v-col>
           </v-row>
@@ -34,16 +33,33 @@
 </template>
 
 <script>
+import { mapGetters, mapState, mapActions } from 'vuex'
+
   export default {
     data () {
-      return {
-        cards: [
-        { title: 'Gambar 1', src: '/aset/Akademik_1.JPG', desc:'Pengenalan Mata Uang', flex: 6 },
-        { title: 'Gambar 2', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', desc:'ini keterangan', flex: 6 },
-        { title: 'Gambar 3', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', desc:'ini keterangan', flex: 6 },
-        { title: 'Gambar 5', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', desc:'ini keterangan', flex: 6 },
-      ],
-      }
+      return {}
     },
+
+    computed: {
+      ...mapState({
+        loading: state => state.Akademik.loading,
+        error: state => state.Akademik.error,
+        akademiks: state => state.Akademik.akademiks
+      }),
+
+      ...mapGetters({
+      form: 'Akademik/akademik',
+      }),
+    },
+
+    methods:{
+       ...mapActions({
+        fetch: 'Akademik/get',
+      }),
+    },
+    
+    mounted () {
+        this.fetch()
+    }
   }
 </script>

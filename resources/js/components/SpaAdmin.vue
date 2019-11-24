@@ -15,6 +15,24 @@
           </v-list-item-content>
         </v-list-item>
 
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-book-open-variant</v-icon>
+          </v-list-item-action>
+          <v-list-item-content @click="AddAkademik">
+            <v-list-item-title>Program Akademik</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-creation</v-icon>
+          </v-list-item-action>
+          <v-list-item-content @click="AddNonAkademik">
+            <v-list-item-title>Program Non Akademik</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
       </v-list>
     </v-navigation-drawer>
 
@@ -52,8 +70,14 @@
     },
 
     methods: {
-        AddGaleri(){
+      AddGaleri(){
           this.$router.push({ name : 'AddGaleri' })
+      },
+      AddAkademik(){
+          this.$router.push({ name : 'AddAkademik' })
+      },
+      AddNonAkademik(){
+          this.$router.push({ name : 'AddNonAkademik' })
       },
     },
   }
