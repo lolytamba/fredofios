@@ -1,116 +1,108 @@
 <template>
-  <v-card flat>
+  <v-card flat >
     <v-card
       class="mx-auto"
       max-width="1200"
       style="margin-top:-40px" 
     >
-      <v-card-text style="height:auto">
+      <v-card-text style="height:auto" v-if="show">
       <v-row  
         align="star"
         justify="center"
         style="width:auto; height:auto;">
-        <v-col>
+        <v-col 
+          v-for="news in news_news"
+          :key="news.id"
+        >
           <v-card 
             color="white"
             style="width:350px; height:500px">
            <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
+                :src="'/Artikel/'+news.gambar"
+                class="white--text align-end"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                height="200px"
             >
-              <v-card-title>berita 1</v-card-title>
             </v-img>
+            <v-card-title>{{ news.judul}} </v-card-title>
             <v-card-text>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+              {{news.diskripsi}}
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn small color="primary" @click="berita1">Lanjutkan membaca </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-        <v-spacer></v-spacer>
-         <v-col>
-          <v-card 
-            color="white"
-            style="width:350px; height:500px">
-           <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
-            >
-              <v-card-title>berita 2</v-card-title>
-            </v-img>
-            <v-card-text>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            </v-card-text>
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn small color="primary" @click="berita2">Lanjutkan membaca </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-        <v-spacer></v-spacer>
-         <v-col>
-          <v-card 
-            color="white"
-            style="width:350px; height:500px">
-           <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
-            >
-              <v-card-title>berita 3</v-card-title>
-            </v-img>
-            <v-card-text>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            </v-card-text>
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn small color="primary" @click="berita3">Lanjutkan membaca </v-btn>
+              <v-btn small color="primary" @click="show=false;template=true;showHandler(news)" style="margin-top:110px">Lanjutkan membaca </v-btn>
             </v-card-actions>
           </v-card>
         </v-col>
       </v-row>
       </v-card-text>
+      <v-container v-if="template">
+         <v-img
+          :src="'/Artikel/'+artikel.gambar"
+          class="white--text align-end"
+          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+          height="400px" 
+          >
+        </v-img>
+
+        <v-card-text class="black--text text-justify">
+          <v-flex class="display-2 font-weight-bold blue--text">
+            {{ artikel.judul }}
+          </v-flex>
+          <br>
+          <v-flex class="title font-weight-regular">
+            {{ artikel.konten }}
+          </v-flex>
+        </v-card-text>
+      </v-container>
     </v-card>
-    <v-container></v-container>
   </v-card>
 </template>
 
 <script>
+import { mapGetters, mapState, mapActions } from 'vuex'
+
   export default {
     data () {
       return {
+        id: '',
+        show: true,
+        template: false,
+        artikel : {
+          id :'',
+          judul: '',
+          konten:'',
+          diskripsi:''
+        }
       }
     },
+    computed: {
+      ...mapState({
+        loading: state => state.News.loading,
+        error: state => state.News.error,
+        news_news: state => state.News.news_news
+      }),
 
-    methods: {
+      ...mapGetters({
+      form: 'News/news',
+      }),
+    },
+
+    methods:{
+       ...mapActions({
+        fetch: 'News/get',
+      }),
       berita1(){
          this.$router.push({ name : 'berita1' })
       },
-      berita2(){
-         this.$router.push({ name : 'berita2' })
-      },
-      berita3(){
-         this.$router.push({ name : 'berita3' })
+      showHandler(id){
+        this.artikel = id
+        console.log(this.artikel)
       }
     },
+    
+    mounted () {
+        this.fetch()
+    }
   }
 </script>

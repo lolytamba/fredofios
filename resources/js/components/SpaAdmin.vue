@@ -60,7 +60,16 @@
             <v-list-item-title>Visi Misi</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-      </v-list>
+      
+      <v-list-item link>
+          <v-list-item-action>
+            <v-icon>assignment</v-icon>
+          </v-list-item-action>
+          <v-list-item-content @click="AddArtikel">
+            <v-list-item-title>Artikel</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
     </v-navigation-drawer>
 
     <v-app-bar
@@ -115,6 +124,9 @@
       AddVisiMisi(){
           this.$router.push({ name : 'AddVisiMisi' })
       },
+      AddArtikel(){
+        this.$router.push({ name: 'AddArtikel'})
+      }
     },
   }
 </script>
