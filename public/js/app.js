@@ -8675,9 +8675,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8686,8 +8683,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     logoutHandler: function logoutHandler() {
-      this.$router.push({
-        path: 'login'
+      var _this = this;
+
+      axios.post('api/auth/logout').then(function (response) {
+        _this.$router.push({
+          path: 'login'
+        });
       });
     },
     AddGaleri: function AddGaleri() {
@@ -20687,7 +20688,6 @@ var render = function() {
             ],
             1
           ),
-          _vm._v("\n<<<<<<< HEAD\n      "),
           _vm._v(" "),
           _c(
             "v-list-item",
@@ -20709,7 +20709,6 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _vm._v("\n=======\n      \n      "),
           _c(
             "v-list-item",
             { attrs: { link: "" } },
@@ -20728,8 +20727,7 @@ var render = function() {
               )
             ],
             1
-          ),
-          _vm._v("\n\n>>>>>>> 9de4f97498a329e814ebb9896c06931d9cecb41a\n    ")
+          )
         ],
         1
       ),

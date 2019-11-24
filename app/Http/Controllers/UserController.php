@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 
 class UserController extends Controller
 {
@@ -40,9 +41,9 @@ class UserController extends Controller
     }
 
     public function logout (Request $request){
-        $request->user()->token()->revoke();
-        return response()->json([
-        'message' => 'Successfully logged out'
-    ]);
+        if (Auth::check()) {
+            Auth::user()->AauthAcessToken()->delete();
+            return response(['message' => 'bisa']);
+         }
     }
 }
