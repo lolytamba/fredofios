@@ -33,6 +33,33 @@
           </v-list-item-content>
         </v-list-item>
 
+      <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-vector-circle</v-icon>
+          </v-list-item-action>
+          <v-list-item-content @click="AddFasilitas">
+            <v-list-item-title>Fasilitas</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+      <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-account-multiple</v-icon>
+          </v-list-item-action>
+          <v-list-item-content @click="AddStaff">
+            <v-list-item-title>Staff</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+
+      <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-key</v-icon>
+          </v-list-item-action>
+          <v-list-item-content @click="AddVisiMisi">
+            <v-list-item-title>Visi Misi</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
@@ -78,6 +105,15 @@
       },
       AddNonAkademik(){
           this.$router.push({ name : 'AddNonAkademik' })
+      },
+      AddFasilitas(){
+          this.$router.push({ name : 'AddFasilitas' })
+      },
+      AddStaff(){
+          this.$router.push({ name : 'AddStaff' })
+      },
+      AddVisiMisi(){
+          this.$router.push({ name : 'AddVisiMisi' })
       },
     },
   }

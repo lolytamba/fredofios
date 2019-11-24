@@ -50,3 +50,24 @@ Route::get('/nonakademik','NonAkademikController@index');
 Route::get('/nonakademik/{id}','NonAkademikController@show');
 Route::post('/nonakademik/{id}','NonAkademikController@update');
 Route::delete('/nonakademik/{id}','NonAkademikController@destroy');
+
+//====================Api Fasilitas====================
+Route::post('/fasilitas','FasilitasController@store');
+Route::get('/fasilitas','FasilitasController@index');
+Route::get('/fasilitas/{id}','FasilitasController@show');
+Route::post('/fasilitas/{id}','FasilitasController@update');
+Route::delete('/fasilitas/{id}','FasilitasController@destroy');
+
+//====================Api Staff====================
+Route::post('/staff','StaffController@store');
+Route::get('/staff','StaffController@index');
+Route::get('/staff/{id}','StaffController@show');
+Route::post('/staff/{id}','StaffController@update');
+Route::delete('/staff/{id}','StaffController@destroy');
+
+//====================Api Misi====================
+Route::post('/misi','MisiController@store');
+Route::get('/misi','MisiController@index');
+Route::get('/misi/{id}','MisiController@show');
+Route::post('/misi/{id}','MisiController@update');
+Route::delete('/misi/{id}','MisiController@destroy');
