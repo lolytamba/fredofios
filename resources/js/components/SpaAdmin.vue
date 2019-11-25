@@ -122,8 +122,10 @@
     },
 
     methods: {
+      
       logoutHandler() {
-         axios.post('api/auth/logout').then(response => {
+        axios.get('api/auth/logout').then(response => {
+          console.log(response);
           this.$router.push({path: 'login'});
         })
       },
@@ -152,6 +154,13 @@
         this.$router.push({ name: 'AddArtikel'})
       }
     },
+
+    mounted(){
+      axios.get('/api/auth/user')
+          .then(response => {
+          console.log(response)
+      });
+    }
   }
 </script>
 

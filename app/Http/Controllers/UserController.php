@@ -4,46 +4,72 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use Auth;
+use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
+    public function user(Request $request)
+    {
+        return response()->json($request->user());
+    }
+    
     public function create (Request $request){
-        $validateData = $request->validate([
-            'name' => 'required|max:50',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|max:12',
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|string|email|unique:users',
+            'password' => 'required|string'
         ]);
-        
-        $validateData['password'] = bcrypt($request->password);
 
-        $user = User::create($validateData);
+        $user = new User([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password)
+        ]);
 
-        $accessToken = $user->createToken('authToken')->accessToken;
-
-        return response(['user'=>$user, 'access_token'=>$accessToken]);
+        $user->save();
+        return response()->json([
+            'message' => 'Successfully created user!'
+        ], 201);
     }
 
     public function login (Request $request)
     {
-        $loginData = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|max:12',
+        $request->validate([
+            'email' => 'required|string|email',
+            'password' => 'required|string',
+            'remember_me' => 'boolean'
         ]);
 
-        if(!auth()->attempt($loginData)){
-            return response(['message' => 'Username/Password salah'], 401);
-        }
+        $credentials = request(['email', 'password']);
 
-        $accessToken = auth()->user()->createToken('authToken')->accessToken;
+        if(!Auth::attempt($credentials))
+            return response()->json([
+                'message' => 'Unauthorized'
+            ], 401);
 
-        return response (['user' => auth()->user(), 'access_token' => $accessToken]);
+        $user = $request->user();
+        $tokenResult = $user->createToken('Personal Access Token');
+        $token = $tokenResult->token;
+
+        if ($request->remember_me)
+            $token->expires_at = Carbon::now()->addWeeks(1);
+
+        $token->save();
+        
+        return response()->json([
+            'access_token' => $tokenResult->accessToken,
+            'token_type' => 'Bearer',
+            'expires_at' => Carbon::parse(
+                $tokenResult->token->expires_at
+            )->toDateTimeString()
+        ]);
     }
 
     public function logout (Request $request){
-        if (Auth::check()) {
-            Auth::user()->AauthAcessToken()->delete();
-            return response(['message' => 'bisa']);
-         }
+        $request->user()->token()->delete(); 
+        return response()->json([
+            'message' => 'Successfully logged out'
+        ]);
     }
 }

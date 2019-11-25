@@ -14,20 +14,24 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 Route::post('/kontakform','KontakController@store');
-Route::post('/register','UserController@create');
-//Route::post('/login','UserController@login');
 
 Route::group([
-    'middleware' => 'api',
     'prefix' => 'auth'
-], function ($router) {
-    Route::post('/login','UserController@login'); //web platform
-    Route::post('/logout', 'UserController@logout');
+], function () {
+    Route::post('/login','UserController@login');
+    Route::post('/register','UserController@create');
+
+    Route::group([
+      'middleware' => 'auth:api'
+    ], function() {
+        Route::get('/logout', 'UserController@logout');
+        Route::get('/user', 'UserController@user');
+    });
 });
 
 

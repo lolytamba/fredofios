@@ -8239,6 +8239,8 @@ __webpack_require__.r(__webpack_exports__);
           _this.$router.push({
             path: 'AddGaleri'
           });
+
+          console.log(response);
         })["catch"](function (error) {
           alert('Username atau Password salah');
         });
@@ -8685,7 +8687,9 @@ __webpack_require__.r(__webpack_exports__);
     logoutHandler: function logoutHandler() {
       var _this = this;
 
-      axios.post('api/auth/logout').then(function (response) {
+      axios.get('api/auth/logout').then(function (response) {
+        console.log(response);
+
         _this.$router.push({
           path: 'login'
         });
@@ -8731,6 +8735,11 @@ __webpack_require__.r(__webpack_exports__);
         name: 'AddArtikel'
       });
     }
+  },
+  mounted: function mounted() {
+    axios.get('/api/auth/user').then(function (response) {
+      console.log(response);
+    });
   }
 });
 

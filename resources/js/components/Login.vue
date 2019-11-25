@@ -108,6 +108,7 @@ import { required, maxLength, minLength, numeric, email } from 'vuelidate/lib/va
               axios.post('api/auth/login',data).then(response => {
                 this.user = response.data;
                 this.$router.push({path: 'AddGaleri'});
+                console.log(response);
               })
               .catch(error => {
                   alert('Username atau Password salah')
