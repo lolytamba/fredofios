@@ -93,41 +93,49 @@ export const routes = [
           path: '/AddGaleri',
           name: 'AddGaleri',
           component: AddGaleri,
+          meta: { requireLogin : true }
         },
         {
           path: '/AddAkademik',
           name: 'AddAkademik',
           component: AddAkademik,
+          meta: { requireLogin : true }
         },
         {
           path: '/AddNonAkademik',
           name: 'AddNonAkademik',
           component: AddNonAkademik,
+          meta: { requireLogin : true }
         },
         {
           path: '/AddFasilitas',
           name: 'AddFasilitas',
           component: AddFasilitas,
+          meta: { requireLogin : true }
         },
         {
           path: '/AddStaff',
           name: 'AddStaff',
           component: AddStaff,
+          meta: { requireLogin : true }
         },
         {
           path: '/AddVisiMisi',
           name: 'AddVisiMisi',
           component: AddVisiMisi,
+          meta: { requireLogin : true }
         },
         {
           path: '/AddTentang',
           name: 'AddTentang',
           component: AddTentang,
+          meta: { requireLogin : true }
         },
         {
           path: '/AddArtikel',
           name: 'AddArtikel',
           component: AddArtikel,
+          meta: { requireLogin : true }
         }
       ]
     }

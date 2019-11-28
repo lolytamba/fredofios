@@ -5,6 +5,7 @@ import Facility from './Fasilitas'
 import Staff from './Staff'
 import Carousel from './Carousel'
 import News from './Artikel'
+import Token from './Token'
 
 export default{
     Galeri,
@@ -14,4 +15,5 @@ export default{
     Staff,
     Carousel,
     News,
+    Token,
 }

@@ -114,21 +114,36 @@
 </template>
 
 <script>
+import { mapGetters, mapState, mapActions } from 'vuex'
+
   export default {
     data(){
         return{
             drawer: null,
         }
     },
+    computed: {
+      ...mapState({
+          loading: state => state.Token.loading,
+          error: state => state.Token.error,
+          token: state => state.Token.token,
+        }),
+    },
 
     methods: {
+      ...mapActions({
+        destroyToken: 'Token/deleteToken',
+      }),
+
+      ...mapGetters({
+        loggedIn: 'Token/loggedIn',
+      }),
       
-      logoutHandler() {
-        axios.get('api/auth/logout').then(response => {
-          console.log(response);
-          this.$router.push({path: 'login'});
-        })
+      async logoutHandler() {
+          await this.destroyToken()
+          this.$router.push({ name : 'login' })
       },
+
       AddGaleri(){
           this.$router.push({ name : 'AddGaleri' })
       },
@@ -154,13 +169,6 @@
         this.$router.push({ name: 'AddArtikel'})
       }
     },
-
-    mounted(){
-      axios.get('/api/auth/user')
-          .then(response => {
-          console.log(response)
-      });
-    }
   }
 </script>
 

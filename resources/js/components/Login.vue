@@ -63,6 +63,7 @@
 
 <script>
 import { required, maxLength, minLength, numeric, email } from 'vuelidate/lib/validators'
+import { mapGetters, mapState, mapActions } from 'vuex'
 
   export default {
     data () {
@@ -95,27 +96,27 @@ import { required, maxLength, minLength, numeric, email } from 'vuelidate/lib/va
         !this.$v.email.email && errors.push('Email harus valid')
         !this.$v.email.required && errors.push('Email tidak boleh kosong')
         return errors
-      }
+      },
+
+      ...mapState({
+          loading: state => state.Token.loading,
+          error: state => state.Token.error,
+          token: state => state.Token.token,
+        }),
     },
 
     methods: {
-        login(){
-          const data = {
-            email: this.email,
-            password: this.password,
-          }
-          try {
-              axios.post('api/auth/login',data).then(response => {
-                this.user = response.data;
-                this.$router.push({path: 'AddGaleri'});
-                console.log(response);
-              })
-              .catch(error => {
-                  alert('Username atau Password salah')
-              });
-          } catch (err) {
-              alert('Username atau Password salah')
-          }
+      ...mapActions({
+        retrieveToken: 'Token/retrieveToken',
+      }),
+      
+      async login(){
+        const payload = {
+          email: this.email,
+          password: this.password
+        }
+          await this.retrieveToken(payload)
+          this.$router.push({ name : 'AddGaleri' })
       }
     },
   }
