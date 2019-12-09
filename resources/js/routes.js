@@ -20,6 +20,7 @@ import AddStaff from './components/AddStaff'
 import AddVisiMisi from './components/AddVisiMisi'
 import AddTentang from './components/AddTentang'
 import AddArtikel from './components/AddArtikel'
+import middleware, { auth } from './middleware'
 
 export const routes = [
     {
@@ -93,49 +94,65 @@ export const routes = [
           path: '/AddGaleri',
           name: 'AddGaleri',
           component: AddGaleri,
-          meta: { requireLogin : true }
+          beforeEnter: middleware([
+            auth
+          ]) 
         },
         {
           path: '/AddAkademik',
           name: 'AddAkademik',
           component: AddAkademik,
-          meta: { requireLogin : true }
+          beforeEnter: middleware([
+            auth
+          ])
         },
         {
           path: '/AddNonAkademik',
           name: 'AddNonAkademik',
           component: AddNonAkademik,
-          meta: { requireLogin : true }
+          beforeEnter: middleware([
+            auth
+          ])
         },
         {
           path: '/AddFasilitas',
           name: 'AddFasilitas',
           component: AddFasilitas,
-          meta: { requireLogin : true }
+          beforeEnter: middleware([
+            auth
+          ])
         },
         {
           path: '/AddStaff',
           name: 'AddStaff',
           component: AddStaff,
-          meta: { requireLogin : true }
+          beforeEnter: middleware([
+            auth
+          ])
         },
         {
           path: '/AddVisiMisi',
           name: 'AddVisiMisi',
           component: AddVisiMisi,
-          meta: { requireLogin : true }
+          beforeEnter: middleware([
+            auth
+          ])
         },
         {
           path: '/AddTentang',
           name: 'AddTentang',
           component: AddTentang,
-          meta: { requireLogin : true }
+          beforeEnter: middleware([
+            auth
+          ])
         },
         {
           path: '/AddArtikel',
           name: 'AddArtikel',
           component: AddArtikel,
-          meta: { requireLogin : true }
+          beforeEnter: middleware([
+            auth
+          ])
         }
       ]
     }

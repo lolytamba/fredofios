@@ -6,6 +6,7 @@ import Staff from './Staff'
 import Carousel from './Carousel'
 import News from './Artikel'
 import Token from './Token'
+import Login from './Login'
 
 export default{
     Galeri,
@@ -16,4 +17,5 @@ export default{
     Carousel,
     News,
     Token,
+    Login
 }

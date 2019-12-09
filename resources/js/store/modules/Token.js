@@ -33,7 +33,6 @@ const actions = {
                 const token = response.data.access_token
                 
                 localStorage.setItem('access_token', token)
-                context.commit('retrieveToken', token)
                 resolve(response)
             })
             .catch(error => {
@@ -45,9 +44,9 @@ const actions = {
     },
 
     async deleteToken(context){
-        axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token 
+        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token')
 
-        if(context.getters.loggedIn){
+        if(localStorage.getItem('access_token')){
             return new Promise((resolve, reject) => {
                 axios.post('/api/auth/logout')
                 .then(response => {

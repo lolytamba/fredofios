@@ -76551,27 +76551,17 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]({
   mode: 'history',
   routes: _routes__WEBPACK_IMPORTED_MODULE_7__["routes"]
 });
-vue__WEBPACK_IMPORTED_MODULE_2___default.a.router = router;
 router.beforeEach(function (to, from, next) {
-  if (to.matched.some(function (record) {
-    return record.meta.requireLogin;
-  })) {
-    // this route requires auth, check if logged in
-    // if not, redirect to login page.
-    if (!_store__WEBPACK_IMPORTED_MODULE_5__["default"].getters.loggedIn) {
-      next({
-        path: '/login',
-        query: {
-          redirect: to.fullPath
-        }
-      });
-    } else {
-      next();
-    }
-  } else {
-    next(); // make sure to always call next()!
+  if (to.name == 'login' && localStorage.getItem('access_token')) {
+    next({
+      name: 'AddGaleri'
+    });
+    return;
   }
+
+  next();
 });
+vue__WEBPACK_IMPORTED_MODULE_2___default.a.router = router;
 new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
   el: '#app',
   router: router,
@@ -78254,6 +78244,94 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/middleware.js":
+/*!************************************!*\
+  !*** ./resources/js/middleware.js ***!
+  \************************************/
+/*! exports provided: auth, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "auth", function() { return auth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return middleware; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+function auth(_x, _x2, _x3) {
+  return _auth.apply(this, arguments);
+}
+
+function _auth() {
+  _auth = _asyncToGenerator(
+  /*#__PURE__*/
+  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(to, from, next) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            if (localStorage.getItem('access_token')) {
+              _context2.next = 3;
+              break;
+            }
+
+            next({
+              name: 'login'
+            });
+            return _context2.abrupt("return");
+
+          case 3:
+            next();
+
+          case 4:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+  return _auth.apply(this, arguments);
+}
+
+function middleware(guards) {
+  return function (to, from, next) {
+    guards.forEach(
+    /*#__PURE__*/
+    function () {
+      var _ref = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(guard) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return guard(to, from, next);
+
+              case 2:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x4) {
+        return _ref.apply(this, arguments);
+      };
+    }());
+  };
+}
+
+/***/ }),
+
 /***/ "./resources/js/routes.js":
 /*!********************************!*\
   !*** ./resources/js/routes.js ***!
@@ -78286,6 +78364,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_AddVisiMisi__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/AddVisiMisi */ "./resources/js/components/AddVisiMisi.vue");
 /* harmony import */ var _components_AddTentang__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/AddTentang */ "./resources/js/components/AddTentang.vue");
 /* harmony import */ var _components_AddArtikel__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/AddArtikel */ "./resources/js/components/AddArtikel.vue");
+/* harmony import */ var _middleware__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./middleware */ "./resources/js/middleware.js");
+
 
 
 
@@ -78365,58 +78445,42 @@ var routes = [{
     path: '/AddGaleri',
     name: 'AddGaleri',
     component: _components_AddGaleri__WEBPACK_IMPORTED_MODULE_13__["default"],
-    meta: {
-      requireLogin: true
-    }
+    beforeEnter: Object(_middleware__WEBPACK_IMPORTED_MODULE_22__["default"])([_middleware__WEBPACK_IMPORTED_MODULE_22__["auth"]])
   }, {
     path: '/AddAkademik',
     name: 'AddAkademik',
     component: _components_AddAkademik__WEBPACK_IMPORTED_MODULE_15__["default"],
-    meta: {
-      requireLogin: true
-    }
+    beforeEnter: Object(_middleware__WEBPACK_IMPORTED_MODULE_22__["default"])([_middleware__WEBPACK_IMPORTED_MODULE_22__["auth"]])
   }, {
     path: '/AddNonAkademik',
     name: 'AddNonAkademik',
     component: _components_AddNonAkademik__WEBPACK_IMPORTED_MODULE_16__["default"],
-    meta: {
-      requireLogin: true
-    }
+    beforeEnter: Object(_middleware__WEBPACK_IMPORTED_MODULE_22__["default"])([_middleware__WEBPACK_IMPORTED_MODULE_22__["auth"]])
   }, {
     path: '/AddFasilitas',
     name: 'AddFasilitas',
     component: _components_AddFasilitas__WEBPACK_IMPORTED_MODULE_17__["default"],
-    meta: {
-      requireLogin: true
-    }
+    beforeEnter: Object(_middleware__WEBPACK_IMPORTED_MODULE_22__["default"])([_middleware__WEBPACK_IMPORTED_MODULE_22__["auth"]])
   }, {
     path: '/AddStaff',
     name: 'AddStaff',
     component: _components_AddStaff__WEBPACK_IMPORTED_MODULE_18__["default"],
-    meta: {
-      requireLogin: true
-    }
+    beforeEnter: Object(_middleware__WEBPACK_IMPORTED_MODULE_22__["default"])([_middleware__WEBPACK_IMPORTED_MODULE_22__["auth"]])
   }, {
     path: '/AddVisiMisi',
     name: 'AddVisiMisi',
     component: _components_AddVisiMisi__WEBPACK_IMPORTED_MODULE_19__["default"],
-    meta: {
-      requireLogin: true
-    }
+    beforeEnter: Object(_middleware__WEBPACK_IMPORTED_MODULE_22__["default"])([_middleware__WEBPACK_IMPORTED_MODULE_22__["auth"]])
   }, {
     path: '/AddTentang',
     name: 'AddTentang',
     component: _components_AddTentang__WEBPACK_IMPORTED_MODULE_20__["default"],
-    meta: {
-      requireLogin: true
-    }
+    beforeEnter: Object(_middleware__WEBPACK_IMPORTED_MODULE_22__["default"])([_middleware__WEBPACK_IMPORTED_MODULE_22__["auth"]])
   }, {
     path: '/AddArtikel',
     name: 'AddArtikel',
     component: _components_AddArtikel__WEBPACK_IMPORTED_MODULE_21__["default"],
-    meta: {
-      requireLogin: true
-    }
+    beforeEnter: Object(_middleware__WEBPACK_IMPORTED_MODULE_22__["default"])([_middleware__WEBPACK_IMPORTED_MODULE_22__["auth"]])
   }]
 }];
 
@@ -81917,6 +81981,27 @@ var actions = {
 
 /***/ }),
 
+/***/ "./resources/js/store/modules/Login.js":
+/*!*********************************************!*\
+  !*** ./resources/js/store/modules/Login.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var state = {
+  isLoggedIn: !!localStorage.getItem('access_token')
+};
+var mutations = {
+  loginUser: function loginUser(state) {
+    state.isLoggedIn = true;
+  },
+  logoutUser: function logoutUser(state) {
+    state.isLoggedIn = false;
+  }
+};
+
+/***/ }),
+
 /***/ "./resources/js/store/modules/NonAkademik.js":
 /*!***************************************************!*\
   !*** ./resources/js/store/modules/NonAkademik.js ***!
@@ -82493,7 +82578,6 @@ var actions = {
                 }).then(function (response) {
                   var token = response.data.access_token;
                   localStorage.setItem('access_token', token);
-                  context.commit('retrieveToken', token);
                   resolve(response);
                 })["catch"](function (error) {
                   console.log(error);
@@ -82524,9 +82608,9 @@ var actions = {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token;
+              axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token');
 
-              if (!context.getters.loggedIn) {
+              if (!localStorage.getItem('access_token')) {
                 _context2.next = 3;
                 break;
               }
@@ -82585,6 +82669,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Carousel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Carousel */ "./resources/js/store/modules/Carousel.js");
 /* harmony import */ var _Artikel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Artikel */ "./resources/js/store/modules/Artikel.js");
 /* harmony import */ var _Token__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Token */ "./resources/js/store/modules/Token.js");
+/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Login */ "./resources/js/store/modules/Login.js");
+/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_Login__WEBPACK_IMPORTED_MODULE_8__);
+
 
 
 
@@ -82601,7 +82688,8 @@ __webpack_require__.r(__webpack_exports__);
   Staff: _Staff__WEBPACK_IMPORTED_MODULE_4__["default"],
   Carousel: _Carousel__WEBPACK_IMPORTED_MODULE_5__["default"],
   News: _Artikel__WEBPACK_IMPORTED_MODULE_6__["default"],
-  Token: _Token__WEBPACK_IMPORTED_MODULE_7__["default"]
+  Token: _Token__WEBPACK_IMPORTED_MODULE_7__["default"],
+  Login: _Login__WEBPACK_IMPORTED_MODULE_8___default.a
 });
 
 /***/ }),
