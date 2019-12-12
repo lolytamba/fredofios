@@ -12313,7 +12313,7 @@ var render = function() {
                       },
                       on
                     ),
-                    [_vm._v("Tambah Foto")]
+                    [_vm._v("Tambah Artikel")]
                   )
                 ]
               }
@@ -12333,7 +12333,9 @@ var render = function() {
             "v-card",
             [
               _c("v-card-title", [
-                _c("span", { staticClass: "headline" }, [_vm._v("Tambah Foto")])
+                _c("span", { staticClass: "headline" }, [
+                  _vm._v("Tambah Artikel")
+                ])
               ]),
               _vm._v(" "),
               _c(
@@ -12588,7 +12590,7 @@ var render = function() {
                   _c("v-icon", { attrs: { dark: "", right: "" } }, [
                     _vm._v("mdi-checkbox-marked-circle")
                   ]),
-                  _vm._v("\n       Foto berhasil ditambah\n     ")
+                  _vm._v("\n       Artikel berhasil ditambah\n     ")
                 ],
                 1
               )
@@ -12616,7 +12618,9 @@ var render = function() {
             "v-card",
             [
               _c("v-card-title", [
-                _c("span", { staticClass: "headline" }, [_vm._v("Edit Foto")])
+                _c("span", { staticClass: "headline" }, [
+                  _vm._v("Edit Artikel")
+                ])
               ]),
               _vm._v(" "),
               _c(
@@ -12871,7 +12875,7 @@ var render = function() {
                   _c("v-icon", { attrs: { dark: "", right: "" } }, [
                     _vm._v("mdi-checkbox-marked-circle")
                   ]),
-                  _vm._v("\n       Foto berhasil diedit\n     ")
+                  _vm._v("\n       Artikel berhasil diedit\n     ")
                 ],
                 1
               )
@@ -12986,7 +12990,7 @@ var render = function() {
                   _c("v-icon", { attrs: { dark: "", right: "" } }, [
                     _vm._v("mdi-checkbox-marked-circle")
                   ]),
-                  _vm._v("\n       Foto berhasil dihapus\n     ")
+                  _vm._v("\n       Artikel berhasil dihapus\n     ")
                 ],
                 1
               )
@@ -20964,7 +20968,8 @@ var render = function() {
               ),
               _vm._v(" "),
               _vm._l(_vm.staffs, function(staff) {
-                return staff.jabatan === "Kepala Sekolah"
+                return staff.jabatan === "Kepala Sekolah" ||
+                  staff.jabatan === "kepala sekolah"
                   ? _c(
                       "v-row",
                       { key: staff.id, attrs: { justify: "space-around" } },
@@ -21018,7 +21023,8 @@ var render = function() {
               _c(
                 "v-row",
                 _vm._l(_vm.staffs, function(staff) {
-                  return staff.jabatan != "Kepala Sekolah"
+                  return staff.jabatan != "Kepala Sekolah" &&
+                    staff.jabatan != "kepala sekolah"
                     ? _c(
                         "v-col",
                         { key: staff.id, attrs: { cols: 4 } },

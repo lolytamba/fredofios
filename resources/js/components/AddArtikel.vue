@@ -5,11 +5,11 @@
         <template v-slot:activator="{ on }">
           <v-btn color="primary" dark class="mb-2" v-on="on"
             style="height: 36px; max-width:200px; left:800px; top:30px;"
-          >Tambah Foto</v-btn>
+          >Tambah Artikel</v-btn>
         </template>
         <v-card>
           <v-card-title>
-            <span class="headline">Tambah Foto</span>
+            <span class="headline">Tambah Artikel</span>
           </v-card-title>
           <VForm>
           <v-card-text>
@@ -104,7 +104,7 @@
         <v-card color="green">
         <v-card-text class="white--text text-center title" style="padding-top: 20px;">
         <v-icon dark right>mdi-checkbox-marked-circle</v-icon>
-          Foto berhasil ditambah
+          Artikel berhasil ditambah
         </v-card-text>
         </v-card>
       </v-dialog>
@@ -112,7 +112,7 @@
       <v-dialog v-model="dialog2" persistent max-width="600px">
         <v-card>
           <v-card-title>
-            <span class="headline">Edit Foto</span>
+            <span class="headline">Edit Artikel</span>
           </v-card-title>
           <VForm>
           <v-card-text>
@@ -209,7 +209,7 @@
         <v-card color="green">
         <v-card-text class="white--text text-center title" style="padding-top: 20px;">
         <v-icon dark right>mdi-checkbox-marked-circle</v-icon>
-          Foto berhasil diedit
+          Artikel berhasil diedit
         </v-card-text>
         </v-card>
       </v-dialog>
@@ -234,7 +234,7 @@
         <v-card color="green">
         <v-card-text class="white--text text-center title" style="padding-top: 20px;">
         <v-icon dark right>mdi-checkbox-marked-circle</v-icon>
-          Foto berhasil dihapus
+          Artikel berhasil dihapus
         </v-card-text>
         </v-card>
       </v-dialog>

@@ -10,7 +10,7 @@
         <v-row 
          v-for="staff in staffs"
         :key="staff.id"
-        justify="space-around" v-if="staff.jabatan === 'Kepala Sekolah'">
+        justify="space-around" v-if="staff.jabatan === 'Kepala Sekolah' || staff.jabatan === 'kepala sekolah'">
             <v-avatar size="200">
                 <v-img
                     :src="'/Staff/'+staff.gambar"
@@ -28,7 +28,7 @@
         v-for="staff in staffs"
         :key="staff.id"
         :cols="4"
-        v-if="staff.jabatan != 'Kepala Sekolah'">
+        v-if="staff.jabatan != 'Kepala Sekolah' && staff.jabatan != 'kepala sekolah'">
         <v-avatar size="200" style="left:80px" >
                 <v-img
                     :src="'/Staff/'+staff.gambar"
