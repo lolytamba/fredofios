@@ -64,24 +64,6 @@ import { mapGetters, mapState, mapActions } from 'vuex'
         item:{
           isi_tentang :'',
         },
-        slides: [
-          {
-            title: 'Mandiri',
-            src: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lafayette_High_School_%28Lexington%2C_KY%29_in_August_2019.jpg'
-          },
-          {
-            title: 'Terampil',
-            src: 'https://www.thelocal.se/userdata/images/article/f399c757d392dd0d8bdfc817a9993176f527de128bb7d1928a85c9ce0c0aabd5.jpg'
-          },
-          {
-            title: 'Berkembang',
-            src: 'https://www.warringtonguardian.co.uk/resources/images/10137723.jpg?display=1&htype=0&type=responsive-gallery'
-          },
-          {
-            title: 'Sosialisasi',
-            src: 'https://www.expatica.com/uk/wp-content/uploads/sites/10/2019/01/School-Holidays-1920x1080.jpg'
-          }
-        ]
       }
     },
 

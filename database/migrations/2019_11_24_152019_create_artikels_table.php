@@ -17,8 +17,8 @@ class CreateArtikelsTable extends Migration
             $table->increments('id');
             $table->string('gambar')->nullable();
             $table->string('judul');
-            $table->string('diskripsi');
-            $table->string('konten');
+            $table->longText('diskripsi',255);
+            $table->longText('konten');
             $table->timestamps();
         });
     }

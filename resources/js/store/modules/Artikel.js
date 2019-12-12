@@ -6,6 +6,7 @@ const state = {
     gambar: '',
     judul: '',
     konten: '',
+    diskripsi:''
   },
   loading: true,
   error: null
@@ -27,6 +28,7 @@ const mutations = {
     state.news.gambar = payload.gambar
     state.news.judul = payload.judul
     state.news.konten = payload.konten
+    state.news.diskripsi = payload.diskripsi
   }
 }
 
@@ -69,6 +71,7 @@ const actions = {
       data.append('gambar', payload.gambar)
       data.append('judul', payload.judul)
       data.append('konten', payload.konten)
+      data.append('diskripsi', payload.diskripsi)
 
       console.log(data)
       

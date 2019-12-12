@@ -3092,6 +3092,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     find: 'News/edit',
     "delete": 'News/delete'
   }), {
+    reload: function reload() {
+      window.location.reload();
+    },
     pickFile: function pickFile() {
       this.$refs.image.click();
     },
@@ -3140,6 +3143,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   this.dialog = false;
                   this.fetch();
                   this.dialogTambah = true;
+                  this.reload();
                 }
 
               case 8:
@@ -3187,6 +3191,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   this.dialog2 = false;
                   this.dialogEdit = true;
                   this.fetch();
+                  this.reload();
                 }
 
               case 5:
@@ -5769,10 +5774,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -6274,8 +6275,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
-//
 //
 //
 //
@@ -7266,6 +7265,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -7323,6 +7324,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _service_Tentang__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../service/Tentang */ "./resources/js/service/Tentang.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -7482,34 +7499,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      slides: [{
-        title: 'Mandiri',
-        src: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lafayette_High_School_%28Lexington%2C_KY%29_in_August_2019.jpg'
-      }, {
-        title: 'Terampil',
-        src: 'https://www.thelocal.se/userdata/images/article/f399c757d392dd0d8bdfc817a9993176f527de128bb7d1928a85c9ce0c0aabd5.jpg'
-      }, {
-        title: 'Berkembang',
-        src: 'https://www.warringtonguardian.co.uk/resources/images/10137723.jpg?display=1&htype=0&type=responsive-gallery'
-      }, {
-        title: 'Sosialisasi',
-        src: 'https://www.expatica.com/uk/wp-content/uploads/sites/10/2019/01/School-Holidays-1920x1080.jpg'
-      }],
+      items: [],
+      item: {
+        isi_tentang: ''
+      },
       menu: false,
       offset: true,
-      items: [{
+      itemsTentang: [{
         title: 'Visi & Misi',
         route: '/spa/visi_misi'
       }, {
@@ -7528,7 +7529,58 @@ __webpack_require__.r(__webpack_exports__);
       }]
     };
   },
-  methods: {
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
+    loading: function loading(state) {
+      return state.Carousel.loading;
+    },
+    error: function error(state) {
+      return state.Carousel.error;
+    },
+    carousels: function carousels(state) {
+      return state.Carousel.carousels;
+    }
+  }), {}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])({
+    form: 'Carousel/carousel'
+  })),
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
+    fetch: 'Carousel/get'
+  }), {
+    get: function () {
+      var _get = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return _service_Tentang__WEBPACK_IMPORTED_MODULE_2__["default"].get();
+
+              case 3:
+                this.items = _context.sent;
+                _context.next = 9;
+                break;
+
+              case 6:
+                _context.prev = 6;
+                _context.t0 = _context["catch"](0);
+                console.log(_context.t0);
+
+              case 9:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this, [[0, 6]]);
+      }));
+
+      function get() {
+        return _get.apply(this, arguments);
+      }
+
+      return get;
+    }(),
     home: function home() {
       this.$router.push({
         name: 'home'
@@ -7558,6 +7610,10 @@ __webpack_require__.r(__webpack_exports__);
     yutub: function yutub() {
       window.open('https://www.youtube.com/channel/UCIQBMYvkv2kHfB-Aq4i59Lw');
     }
+  }),
+  mounted: function mounted() {
+    this.get();
+    this.fetch();
   }
 });
 
@@ -7808,20 +7864,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       items: [],
       item: {
         isi_tentang: ''
-      },
-      slides: [{
-        title: 'Mandiri',
-        src: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lafayette_High_School_%28Lexington%2C_KY%29_in_August_2019.jpg'
-      }, {
-        title: 'Terampil',
-        src: 'https://www.thelocal.se/userdata/images/article/f399c757d392dd0d8bdfc817a9993176f527de128bb7d1928a85c9ce0c0aabd5.jpg'
-      }, {
-        title: 'Berkembang',
-        src: 'https://www.warringtonguardian.co.uk/resources/images/10137723.jpg?display=1&htype=0&type=responsive-gallery'
-      }, {
-        title: 'Sosialisasi',
-        src: 'https://www.expatica.com/uk/wp-content/uploads/sites/10/2019/01/School-Holidays-1920x1080.jpg'
-      }]
+      }
     };
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapState"])({
@@ -16326,11 +16369,7 @@ var render = function() {
                       _c(
                         "VBtn",
                         {
-                          attrs: {
-                            depressed: "",
-                            color: "info",
-                            disabled: this.$v.form.$invalid
-                          },
+                          attrs: { depressed: "", color: "info" },
                           on: { click: _vm.submitHandlerCarousel }
                         },
                         [_vm._v("\n           Simpan\n         ")]
@@ -16537,11 +16576,7 @@ var render = function() {
                       _c(
                         "VBtn",
                         {
-                          attrs: {
-                            depressed: "",
-                            color: "info",
-                            disabled: this.$v.form.$invalid
-                          },
+                          attrs: { depressed: "", color: "info" },
                           on: { click: _vm.editHandlerCarousel }
                         },
                         [_vm._v("\n           Simpan\n         ")]
@@ -16956,11 +16991,7 @@ var render = function() {
                       _c(
                         "VBtn",
                         {
-                          attrs: {
-                            depressed: "",
-                            color: "info",
-                            disabled: this.$v.$invalid
-                          },
+                          attrs: { depressed: "", color: "info" },
                           on: { click: _vm.submitHandler }
                         },
                         [_vm._v("\n           Simpan\n         ")]
@@ -17106,11 +17137,7 @@ var render = function() {
                       _c(
                         "VBtn",
                         {
-                          attrs: {
-                            depressed: "",
-                            color: "info",
-                            disabled: this.$v.$invalid
-                          },
+                          attrs: { depressed: "", color: "info" },
                           on: {
                             click: function($event) {
                               return _vm.editHandler(_vm.id)
@@ -18090,11 +18117,7 @@ var render = function() {
                       _c(
                         "VBtn",
                         {
-                          attrs: {
-                            depressed: "",
-                            color: "info",
-                            disabled: this.$v.$invalid
-                          },
+                          attrs: { depressed: "", color: "info" },
                           on: { click: _vm.submitHandler }
                         },
                         [_vm._v("\n           Simpan\n         ")]
@@ -18238,11 +18261,7 @@ var render = function() {
                       _c(
                         "VBtn",
                         {
-                          attrs: {
-                            depressed: "",
-                            color: "info",
-                            disabled: this.$v.$invalid
-                          },
+                          attrs: { depressed: "", color: "info" },
                           on: {
                             click: function($event) {
                               return _vm.editHandler(_vm.id)
@@ -18723,7 +18742,7 @@ var render = function() {
                           _c(
                             "v-card",
                             {
-                              staticStyle: { width: "350px", height: "500px" },
+                              staticStyle: { width: "350px", height: "auto" },
                               attrs: { color: "white" }
                             },
                             [
@@ -18741,33 +18760,38 @@ var render = function() {
                                 _vm._v(_vm._s(news.judul) + " ")
                               ]),
                               _vm._v(" "),
-                              _c("v-card-text", [
-                                _vm._v(
-                                  "\n            " +
-                                    _vm._s(news.diskripsi) +
-                                    "\n          "
-                                )
-                              ]),
-                              _vm._v(" "),
                               _c(
-                                "v-card-actions",
+                                "v-card-text",
                                 [
-                                  _c("v-spacer"),
-                                  _vm._v(" "),
+                                  _vm._v(
+                                    "\n            " +
+                                      _vm._s(news.diskripsi) +
+                                      "\n         \n          "
+                                  ),
                                   _c(
-                                    "v-btn",
-                                    {
-                                      staticStyle: { "margin-top": "110px" },
-                                      attrs: { small: "", color: "primary" },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.show = false
-                                          _vm.template = true
-                                          _vm.showHandler(news)
-                                        }
-                                      }
-                                    },
-                                    [_vm._v("Lanjutkan membaca ")]
+                                    "v-card-actions",
+                                    [
+                                      _c("v-spacer"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: {
+                                            small: "",
+                                            color: "primary"
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.show = false
+                                              _vm.template = true
+                                              _vm.showHandler(news)
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("Lanjutkan membaca ")]
+                                      )
+                                    ],
+                                    1
                                   )
                                 ],
                                 1
@@ -18870,21 +18894,13 @@ var render = function() {
     "v-app",
     [
       _c("v-img", {
-        staticStyle: { left: "180px", top: "80px" },
-        attrs: {
-          src: "/aset/logo.png",
-          "max-width": "350",
-          "max-height": "350"
-        }
+        staticStyle: { right: "300px", top: "40px" },
+        attrs: { src: "/aset/logo.png", height: "150", contain: "" }
       }),
       _vm._v(" "),
       _c("v-img", {
-        staticStyle: { left: "800px", top: "-120px" },
-        attrs: {
-          src: "/aset/moto2.png",
-          "max-width": "600",
-          "max-height": "600"
-        }
+        staticStyle: { left: "250px", top: "-110px" },
+        attrs: { src: "/aset/moto2.png", contain: "", height: "150" }
       }),
       _vm._v(" "),
       _c(
@@ -18958,7 +18974,7 @@ var render = function() {
                               _c(
                                 "v-list",
                                 { attrs: { color: "blue darken-1" } },
-                                _vm._l(_vm.items, function(item) {
+                                _vm._l(_vm.itemsTentang, function(item) {
                                   return _c(
                                     "v-list-item",
                                     {
@@ -19090,16 +19106,19 @@ var render = function() {
                         "show-arrows-on-hover": ""
                       }
                     },
-                    _vm._l(_vm.slides, function(slide, i) {
+                    _vm._l(_vm.carousels, function(carousel, i) {
                       return _c(
                         "v-carousel-item",
-                        { key: slide.title },
+                        { key: carousel.id },
                         [
                           _c(
                             "v-img",
                             {
                               staticClass: "white--text align-end",
-                              attrs: { src: slide.src, height: "100%" }
+                              attrs: {
+                                src: "/Carousel/" + carousel.gambar,
+                                height: "100%"
+                              }
                             },
                             [
                               _c(
@@ -19110,7 +19129,7 @@ var render = function() {
                                 },
                                 [
                                   _c("div", { staticClass: "display-3" }, [
-                                    _vm._v(_vm._s(slide.title))
+                                    _vm._v(_vm._s(carousel.judul))
                                   ])
                                 ]
                               )
@@ -19148,24 +19167,21 @@ var render = function() {
               _vm._v(" "),
               _c("br"),
               _vm._v(" "),
-              _c("v-flex", { staticClass: "title font-weight-regular" }, [
-                _vm._v(
-                  "\r\n          Sekolah Lanjutan Autis (SLA) Fredofios berdiri pada tanggal 3 April 2003. SLA Fredofios  \r\n          merupakan salah satu sekolah luar\r\n          biasa yang berada di Yogyakarta untuk pelajar dengan Autism Spectrum Disorder (ASD).\r\n          "
-                ),
-                _c("br"),
-                _c("br"),
-                _vm._v(
-                  "\r\n          Fredofios terletak di sebidang tanah seluas 400 m dan bangunan 370m beralamat di JL. Seturan II \r\n          Perumnas Gg Indragiri B/II Condongsari Depok Sleman Yogyakarta, tepatnya berada diarah utara\r\n          selokan mataram. Sekolah khusus untuk remaja autis usia 10 - 23 tahun pada jenjang SMOLB dan SMALB.\r\n          Fredofios memiliki sekitar 18 pelajar dan xx anggota staff sekolah. Fredofios dibawah naungan Yayasan Autisma Nusantara.\r\n          "
-                ),
-                _c("br"),
-                _c("br"),
-                _vm._v(
-                  "\r\n          Pembelajaran Anak dan Remaja Autis di Fredofios lebih\r\n          mengarah ke Life Skill, dengan porsi belajar Keterampilan dan Seni 80% yang disesuaikan dengan Minat dan Potensi dari masing-masing siswa.\r\n          Setiap anak digali potensinya dan dikembangkan sesuai potensi yang dimilikinya. Sehingga setiap anak akan berkembang sesuai mnat dan bakatnya masing-masing."
-                ),
-                _c("p")
-              ])
+              _vm._l(_vm.items, function(item, i) {
+                return _c(
+                  "v-flex",
+                  { key: i, staticClass: "title font-weight-regular" },
+                  [
+                    _vm._v(
+                      "\r\n          " +
+                        _vm._s(item.isi_tentang) +
+                        "\r\n       "
+                    )
+                  ]
+                )
+              })
             ],
-            1
+            2
           )
         ],
         1
@@ -20944,11 +20960,11 @@ var render = function() {
               _c(
                 "p",
                 { staticClass: "Headline text-center font-weight-bold" },
-                [_vm._v("Haii, ini kami Pengurus-Pengurus Fredofios")]
+                [_vm._v("Pengurus-Pengurus Fredofios")]
               ),
               _vm._v(" "),
               _vm._l(_vm.staffs, function(staff) {
-                return staff.jabatan === "kepala sekolah"
+                return staff.jabatan === "Kepala Sekolah"
                   ? _c(
                       "v-row",
                       { key: staff.id, attrs: { justify: "space-around" } },
@@ -21002,7 +21018,7 @@ var render = function() {
               _c(
                 "v-row",
                 _vm._l(_vm.staffs, function(staff) {
-                  return staff.jabatan != "kepala sekolah"
+                  return staff.jabatan != "Kepala Sekolah"
                     ? _c(
                         "v-col",
                         { key: staff.id, attrs: { cols: 4 } },
@@ -80996,7 +81012,8 @@ var state = {
   news: {
     gambar: '',
     judul: '',
-    konten: ''
+    konten: '',
+    diskripsi: ''
   },
   loading: true,
   error: null
@@ -81015,6 +81032,7 @@ var mutations = {
     state.news.gambar = payload.gambar;
     state.news.judul = payload.judul;
     state.news.konten = payload.konten;
+    state.news.diskripsi = payload.diskripsi;
   }
 };
 var getters = {
@@ -81157,25 +81175,26 @@ var actions = {
               data.append('gambar', payload.gambar);
               data.append('judul', payload.judul);
               data.append('konten', payload.konten);
+              data.append('diskripsi', payload.diskripsi);
               console.log(data);
-              _context4.next = 8;
+              _context4.next = 9;
               return _service_Artikel__WEBPACK_IMPORTED_MODULE_1__["default"].update(payload.id, data);
 
-            case 8:
-              _context4.next = 13;
+            case 9:
+              _context4.next = 14;
               break;
 
-            case 10:
-              _context4.prev = 10;
+            case 11:
+              _context4.prev = 11;
               _context4.t0 = _context4["catch"](0);
               context.commit('setFailedAction', _context4.t0);
 
-            case 13:
+            case 14:
             case "end":
               return _context4.stop();
           }
         }
-      }, _callee4, null, [[0, 10]]);
+      }, _callee4, null, [[0, 11]]);
     }));
 
     function update(_x6, _x7) {

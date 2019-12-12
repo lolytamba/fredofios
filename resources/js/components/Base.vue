@@ -1,16 +1,16 @@
 <template>
 <v-app>
   <v-img
-      src="/aset/logo.png"
-      max-width="350"
-      max-height="350"
-      style="left:180px; top:80px"
-    ></v-img>
+    src="/aset/logo.png"
+    height="150"
+    contain
+    style="right:300px; top:40px"
+  ></v-img>
     <v-img
       src="/aset/moto2.png"
-      max-width="600"
-      max-height="600"
-      style="left:800px; top:-120px"
+      contain
+      height="150"
+      style="left: 250px; top: -110px"
     ></v-img>
     <v-card flat>
         <v-card
@@ -31,7 +31,7 @@
                 </template>
                 <v-list color="blue darken-1">
                 <v-list-item
-                  v-for="item in items"
+                  v-for="item in itemsTentang"
                   :key="item.index"
                   route :to="item.route"
                 >
@@ -67,23 +67,23 @@
                   hide-delimiter-background
                   show-arrows-on-hover
                 >
-                    <v-carousel-item
-                      v-for="(slide, i) in slides"
-                      :key="slide.title"
+                   <v-carousel-item
+                    v-for="(carousel, i) in carousels"
+                    :key="carousel.id"
+                  >
+                  <v-img 
+                    :src="'/Carousel/'+carousel.gambar"
+                    height="100%"
+                    class="white--text align-end">
+                    <v-row
+                      class="fill-height"
+                      align="center"
+                      justify="center"
                     >
-                    <v-img 
-                      :src="slide.src"
-                      height="100%"
-                      class="white--text align-end">
-                      <v-row
-                        class="fill-height"
-                        align="center"
-                        justify="center"
-                      >
-                      <div class="display-3">{{ slide.title }}</div>
-                      </v-row>
-                    </v-img>
-                    </v-carousel-item>
+                    <div class="display-3">{{ carousel.judul }}</div>
+                    </v-row>
+                  </v-img>
+                  </v-carousel-item>
                 </v-carousel>
             </v-card-text>
         </v-card>
@@ -96,19 +96,10 @@
        </v-flex>
        <br>
 
-       <v-flex class="title font-weight-regular">
-          Sekolah Lanjutan Autis (SLA) Fredofios berdiri pada tanggal 3 April 2003. SLA Fredofios  
-          merupakan salah satu sekolah luar
-          biasa yang berada di Yogyakarta untuk pelajar dengan Autism Spectrum Disorder (ASD).
-          <br><br>
-          Fredofios terletak di sebidang tanah seluas 400 m dan bangunan 370m beralamat di JL. Seturan II 
-          Perumnas Gg Indragiri B/II Condongsari Depok Sleman Yogyakarta, tepatnya berada diarah utara
-          selokan mataram. Sekolah khusus untuk remaja autis usia 10 - 23 tahun pada jenjang SMOLB dan SMALB.
-          Fredofios memiliki sekitar 18 pelajar dan xx anggota staff sekolah. Fredofios dibawah naungan Yayasan Autisma Nusantara.
-          <br><br>
-          Pembelajaran Anak dan Remaja Autis di Fredofios lebih
-          mengarah ke Life Skill, dengan porsi belajar Keterampilan dan Seni 80% yang disesuaikan dengan Minat dan Potensi dari masing-masing siswa.
-          Setiap anak digali potensinya dan dikembangkan sesuai potensi yang dimilikinya. Sehingga setiap anak akan berkembang sesuai mnat dan bakatnya masing-masing.</p>
+        <v-flex class="title font-weight-regular"
+          v-for="(item, i) in items"
+          :key="i">
+          {{ item.isi_tentang }}
        </v-flex>
       </v-card-text>
     </v-container>
@@ -167,30 +158,18 @@
 </template>
 
 <script>
+import { mapGetters, mapState, mapActions } from 'vuex'
+import Controller from './../service/Tentang'
 export default {
     data () {
       return {
-        slides: [
-          {
-            title: 'Mandiri',
-            src: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Lafayette_High_School_%28Lexington%2C_KY%29_in_August_2019.jpg'
-          },
-          {
-            title: 'Terampil',
-            src: 'https://www.thelocal.se/userdata/images/article/f399c757d392dd0d8bdfc817a9993176f527de128bb7d1928a85c9ce0c0aabd5.jpg'
-          },
-          {
-            title: 'Berkembang',
-            src: 'https://www.warringtonguardian.co.uk/resources/images/10137723.jpg?display=1&htype=0&type=responsive-gallery'
-          },
-          {
-            title: 'Sosialisasi',
-            src: 'https://www.expatica.com/uk/wp-content/uploads/sites/10/2019/01/School-Holidays-1920x1080.jpg'
-          }
-        ],
+        items: [],
+        item:{
+          isi_tentang :'',
+        },
         menu: false,
         offset: true,
-        items:[
+        itemsTentang:[
           {title: 'Visi & Misi', route: '/spa/visi_misi'},
           {title: 'Faslitas Sekolah', route: '/spa/fasilitas'},
           {title: 'Staff Sekolah', route: '/spa/staff'}
@@ -201,7 +180,32 @@ export default {
         ],
       }
     },
+
+    computed: {    
+      ...mapState({
+        loading: state => state.Carousel.loading,
+        error: state => state.Carousel.error,
+        carousels: state => state.Carousel.carousels
+      }),
+
+      ...mapGetters({
+      form: 'Carousel/carousel',
+      }),
+    },
+
     methods: {
+      ...mapActions({
+        fetch: 'Carousel/get',
+      }),
+
+      async get(){
+          try{
+              this.items = (await Controller.get())
+          }catch(err){
+              console.log(err)
+          }
+        },
+
       home(){
           this.$router.push({ name : 'home' })
       },
@@ -223,6 +227,11 @@ export default {
       yutub: function(){
         window.open('https://www.youtube.com/channel/UCIQBMYvkv2kHfB-Aq4i59Lw');
       }
+    },
+
+    mounted(){
+      this.get()
+      this.fetch()
     },
 }
 </script>

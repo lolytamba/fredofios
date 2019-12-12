@@ -216,7 +216,6 @@
               depressed
               color="info"
               @click="submitHandler"
-              :disabled="this.$v.$invalid"
             >
               Simpan
             </VBtn>
@@ -266,7 +265,6 @@
               depressed
               color="info"
               @click="editHandler(id)"
-              :disabled="this.$v.$invalid"
             >
               Simpan
             </VBtn>

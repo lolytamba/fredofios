@@ -6,11 +6,11 @@
       style="margin-top:-40px" 
     >
       <v-card-text style="height:auto">
-        <p class="Headline text-center font-weight-bold">Haii, ini kami Pengurus-Pengurus Fredofios</p>
+        <p class="Headline text-center font-weight-bold">Pengurus-Pengurus Fredofios</p>
         <v-row 
          v-for="staff in staffs"
         :key="staff.id"
-        justify="space-around" v-if="staff.jabatan === 'kepala sekolah'">
+        justify="space-around" v-if="staff.jabatan === 'Kepala Sekolah'">
             <v-avatar size="200">
                 <v-img
                     :src="'/Staff/'+staff.gambar"
@@ -28,7 +28,7 @@
         v-for="staff in staffs"
         :key="staff.id"
         :cols="4"
-        v-if="staff.jabatan != 'kepala sekolah'">
+        v-if="staff.jabatan != 'Kepala Sekolah'">
         <v-avatar size="200" style="left:80px" >
                 <v-img
                     :src="'/Staff/'+staff.gambar"

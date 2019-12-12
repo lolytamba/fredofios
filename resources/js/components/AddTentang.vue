@@ -59,7 +59,6 @@
               depressed
               color="info"
               @click="submitHandlerCarousel"
-              :disabled="this.$v.form.$invalid"
             >
               Simpan
             </VBtn>
@@ -133,7 +132,6 @@
               depressed
               color="info"
               @click="editHandlerCarousel"
-              :disabled="this.$v.form.$invalid"
             >
               Simpan
             </VBtn>
@@ -269,7 +267,6 @@
               depressed
               color="info"
               @click="submitHandler"
-              :disabled="this.$v.$invalid"
             >
               Simpan
             </VBtn>
@@ -319,7 +316,6 @@
               depressed
               color="info"
               @click="editHandler(id)"
-              :disabled="this.$v.$invalid"
             >
               Simpan
             </VBtn>

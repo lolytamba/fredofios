@@ -16,7 +16,7 @@
         >
           <v-card 
             color="white"
-            style="width:350px; height:500px">
+            style="width:350px; height:auto">
            <v-img
                 :src="'/Artikel/'+news.gambar"
                 class="white--text align-end"
@@ -27,15 +27,17 @@
             <v-card-title>{{ news.judul}} </v-card-title>
             <v-card-text>
               {{news.diskripsi}}
-            </v-card-text>
+           
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn small color="primary" @click="show=false;template=true;showHandler(news)" style="margin-top:110px">Lanjutkan membaca </v-btn>
+              <v-btn small color="primary" @click="show=false;template=true;showHandler(news)">Lanjutkan membaca </v-btn>
             </v-card-actions>
+             </v-card-text>
           </v-card>
         </v-col>
       </v-row>
       </v-card-text>
+   
       <v-container v-if="template">
          <v-img
           :src="'/Artikel/'+artikel.gambar"
