@@ -1,5 +1,5 @@
 <template>
-  <v-app id="inspire">
+  <v-app>
     <v-content>
       <v-container
         class="fill-height"
@@ -51,7 +51,7 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer />
-                <v-btn color="blue lighten-1" @click="login">Login</v-btn>
+                <v-btn class="ma-2 white--text" color="blue lighten-1" @click="login">Login</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>

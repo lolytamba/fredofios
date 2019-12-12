@@ -8731,6 +8731,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -9294,7 +9295,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\ndiv.logout{\r\n  position: relative;\r\n  left: 800px;\n}\r\n", ""]);
+exports.push([module.i, "\ndiv.logout{\r\n  position: relative;\r\n  left: 1000px;\n}\r\n", ""]);
 
 // exports
 
@@ -19965,7 +19966,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-app",
-    { attrs: { id: "inspire" } },
     [
       _c(
         "v-content",
@@ -20074,6 +20074,7 @@ var render = function() {
                               _c(
                                 "v-btn",
                                 {
+                                  staticClass: "ma-2 white--text",
                                   attrs: { color: "blue lighten-1" },
                                   on: { click: _vm.login }
                                 },
@@ -20676,7 +20677,11 @@ var render = function() {
                   _c(
                     "v-list-item-content",
                     { on: { click: _vm.AddGaleri } },
-                    [_c("v-list-item-title", [_vm._v("Galeri")])],
+                    [
+                      _c("v-list-item-title", { staticClass: "subtitle-2" }, [
+                        _vm._v("Galeri")
+                      ])
+                    ],
                     1
                   )
                 ],
@@ -20696,7 +20701,11 @@ var render = function() {
                   _c(
                     "v-list-item-content",
                     { on: { click: _vm.AddAkademik } },
-                    [_c("v-list-item-title", [_vm._v("Program Akademik")])],
+                    [
+                      _c("v-list-item-title", { staticClass: "subtitle-2" }, [
+                        _vm._v("Program Akademik")
+                      ])
+                    ],
                     1
                   )
                 ],
@@ -20716,7 +20725,11 @@ var render = function() {
                   _c(
                     "v-list-item-content",
                     { on: { click: _vm.AddNonAkademik } },
-                    [_c("v-list-item-title", [_vm._v("Program Non Akademik")])],
+                    [
+                      _c("v-list-item-title", { staticClass: "subtitle-2" }, [
+                        _vm._v("Program Non Akademik")
+                      ])
+                    ],
                     1
                   )
                 ],
@@ -20736,7 +20749,11 @@ var render = function() {
                   _c(
                     "v-list-item-content",
                     { on: { click: _vm.AddFasilitas } },
-                    [_c("v-list-item-title", [_vm._v("Fasilitas")])],
+                    [
+                      _c("v-list-item-title", { staticClass: "subtitle-2" }, [
+                        _vm._v("Fasilitas")
+                      ])
+                    ],
                     1
                   )
                 ],
@@ -20756,7 +20773,11 @@ var render = function() {
                   _c(
                     "v-list-item-content",
                     { on: { click: _vm.AddStaff } },
-                    [_c("v-list-item-title", [_vm._v("Staff")])],
+                    [
+                      _c("v-list-item-title", { staticClass: "subtitle-2" }, [
+                        _vm._v("Staff")
+                      ])
+                    ],
                     1
                   )
                 ],
@@ -20775,7 +20796,11 @@ var render = function() {
               _c(
                 "v-list-item-content",
                 { on: { click: _vm.AddVisiMisi } },
-                [_c("v-list-item-title", [_vm._v("Visi Misi")])],
+                [
+                  _c("v-list-item-title", { staticClass: "subtitle-2" }, [
+                    _vm._v("Visi Misi")
+                  ])
+                ],
                 1
               )
             ],
@@ -20795,7 +20820,11 @@ var render = function() {
               _c(
                 "v-list-item-content",
                 { on: { click: _vm.AddTentang } },
-                [_c("v-list-item-title", [_vm._v("Tentang")])],
+                [
+                  _c("v-list-item-title", { staticClass: "subtitle-2" }, [
+                    _vm._v("Tentang")
+                  ])
+                ],
                 1
               )
             ],
@@ -20815,7 +20844,11 @@ var render = function() {
               _c(
                 "v-list-item-content",
                 { on: { click: _vm.AddArtikel } },
-                [_c("v-list-item-title", [_vm._v("Artikel")])],
+                [
+                  _c("v-list-item-title", { staticClass: "subtitle-2" }, [
+                    _vm._v("Artikel")
+                  ])
+                ],
                 1
               )
             ],
@@ -20840,25 +20873,18 @@ var render = function() {
           _vm._v(" "),
           _c("v-toolbar-title", [_vm._v("Admin Fredofios")]),
           _vm._v(" "),
+          _c("v-spacer"),
+          _vm._v(" "),
           _c(
-            "div",
-            { staticClass: "logout" },
+            "v-btn",
+            {
+              staticClass: "ma-2",
+              attrs: { outlined: "", color: "white" },
+              on: { click: _vm.logoutHandler }
+            },
             [
-              _c(
-                "v-btn",
-                {
-                  staticClass: "mx-2",
-                  attrs: {
-                    fab: "",
-                    dark: "",
-                    small: "",
-                    color: "indigo darken-4"
-                  },
-                  on: { click: _vm.logoutHandler }
-                },
-                [_c("v-icon", { attrs: { dark: "" } }, [_vm._v("mdi-logout")])],
-                1
-              )
+              _c("v-icon", [_vm._v("mdi-logout")]),
+              _vm._v("\n        Logout\n      ")
             ],
             1
           )

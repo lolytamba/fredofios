@@ -11,7 +11,7 @@
             <v-icon>mdi-camera</v-icon>
           </v-list-item-action>
           <v-list-item-content @click="AddGaleri">
-            <v-list-item-title>Galeri</v-list-item-title>
+            <v-list-item-title class="subtitle-2">Galeri</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -20,7 +20,7 @@
             <v-icon>mdi-book-open-variant</v-icon>
           </v-list-item-action>
           <v-list-item-content @click="AddAkademik">
-            <v-list-item-title>Program Akademik</v-list-item-title>
+            <v-list-item-title class="subtitle-2">Program Akademik</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -29,7 +29,7 @@
             <v-icon>mdi-creation</v-icon>
           </v-list-item-action>
           <v-list-item-content @click="AddNonAkademik">
-            <v-list-item-title>Program Non Akademik</v-list-item-title>
+            <v-list-item-title class="subtitle-2">Program Non Akademik</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -38,7 +38,7 @@
             <v-icon>mdi-vector-circle</v-icon>
           </v-list-item-action>
           <v-list-item-content @click="AddFasilitas">
-            <v-list-item-title>Fasilitas</v-list-item-title>
+            <v-list-item-title class="subtitle-2">Fasilitas</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -47,7 +47,7 @@
             <v-icon>mdi-account-multiple</v-icon>
           </v-list-item-action>
           <v-list-item-content @click="AddStaff">
-            <v-list-item-title>Staff</v-list-item-title>
+            <v-list-item-title class="subtitle-2">Staff</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -57,7 +57,7 @@
             <v-icon>mdi-key</v-icon>
           </v-list-item-action>
           <v-list-item-content @click="AddVisiMisi">
-            <v-list-item-title>Visi Misi</v-list-item-title>
+            <v-list-item-title class="subtitle-2">Visi Misi</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -67,7 +67,7 @@
             <v-icon>mdi-playlist-plus</v-icon>
           </v-list-item-action>
           <v-list-item-content @click="AddTentang">
-            <v-list-item-title>Tentang</v-list-item-title>
+            <v-list-item-title class="subtitle-2">Tentang</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -77,7 +77,7 @@
             <v-icon>assignment</v-icon>
           </v-list-item-action>
           <v-list-item-content @click="AddArtikel">
-            <v-list-item-title>Artikel</v-list-item-title>
+            <v-list-item-title class="subtitle-2">Artikel</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -90,11 +90,12 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title>Admin Fredofios</v-toolbar-title>
-      <div class="logout">
-        <v-btn class="mx-2" fab dark small color="indigo darken-4"  @click="logoutHandler">
-          <v-icon dark>mdi-logout</v-icon>
+       <v-spacer></v-spacer>
+        <v-btn class="ma-2" outlined color="white"  @click="logoutHandler">
+        <v-icon>mdi-logout</v-icon>
+          Logout
         </v-btn>
-      </div>
+
     </v-app-bar>
   
     <v-content>
@@ -175,6 +176,6 @@ import { mapGetters, mapState, mapActions } from 'vuex'
 <style>
 div.logout{
   position: relative;
-  left: 800px;
+  left: 1000px;
 }
 </style>
